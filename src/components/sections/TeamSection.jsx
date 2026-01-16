@@ -42,7 +42,7 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
       image = ' border-[8px] border-white'
       break
     case 'dark':
-      backgroundMode = 'bg-black'
+      backgroundMode = 'bg-darkOpacity'
       text = 'text-corTitulosBranca'
       textOpacity = 'text-corOutrosTextosBranca'
       textDestaque = 'text-primaryLight'
@@ -65,7 +65,11 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
   }
 
   return (
-    <SectionArea id="about" className={`${backgroundMode}`}>
+    <SectionArea
+      data-theme={colorMode}
+      id="about"
+      className={`${backgroundMode}`}
+    >
       <SectionWrapper className="desktop1:max-w-[900px]">
         <div className="text-center">
           <span
@@ -94,7 +98,9 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
                 className="space-y-8"
               >
                 <div className="max-w-[450px]">
-                  <span className="font-secondFont text-paragraph2 uppercase font-bold">
+                  <span
+                    className={`font-secondFont text-paragraph2 uppercase font-bold font-secondFont text-paragraph2 uppercase font-bold ${textDestaque}`}
+                  >
                     {content.texts.team.cards.card1.title}
                   </span>
                   <h1
@@ -143,7 +149,9 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
                 className="space-y-8"
               >
                 <div className="max-w-[450px]">
-                  <span className="font-secondFont text-paragraph2 uppercase font-bold">
+                  <span
+                    className={`font-secondFont text-paragraph2 uppercase font-bold font-secondFont text-paragraph2 uppercase font-bold ${textDestaque}`}
+                  >
                     {content.texts.team.cards.card1.title}
                   </span>
                   <h1

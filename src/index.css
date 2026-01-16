@@ -19,7 +19,7 @@
 
 /* dark mode */
 [data-theme='dark'] .hero-underline {
-  color: rgba(164, 147, 147, 0.35);
+  @apply text-primaryDark;
 }
 body {
   background-color: #fff !important;

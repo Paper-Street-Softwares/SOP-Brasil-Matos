@@ -377,8 +377,7 @@ const content = {
       miniTag: 'ADVOGADAS',
       title: (
         <h1>
-          Cuidado <span className="italic text-primaryDark">além</span> do
-          processo
+          Cuidado <span className="italic destaque">além</span> do processo
         </h1>
       ),
       subtitle:
