@@ -152,7 +152,7 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
                   <span
                     className={`font-secondFont text-paragraph2 uppercase font-bold ${textDestaque}`}
                   >
-                    {content.texts.team.cards.card1.title}
+                    {content.texts.team.cards.card2.title}
                   </span>
                   <h1
                     className={`text-3xl md:text-4xl font-mainFont font-medium flex flex-col gap-0 ${text}`}
