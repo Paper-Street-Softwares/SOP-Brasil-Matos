@@ -125,7 +125,6 @@ const content = {
               </svg>
             </span>
           </span>{' '}
-          só
         </h1>
       ),
       subtitle: (
