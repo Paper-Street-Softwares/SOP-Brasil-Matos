@@ -19,7 +19,7 @@ export default {
     extend: {
       colors: {
         // Principais
-        primaryLight: '#821F3B',
+        primaryLight: '#BF325A',
         primaryDark: '#350F0F',
         secondary: '#E9E0E0',
         terciary: '#F7F1F1',

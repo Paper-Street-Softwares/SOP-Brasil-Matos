@@ -98,7 +98,7 @@ function FeaturesNovaTemplate({ colorMode }) {
                   <div
                     className={`absolute -bottom-6 -left-6 ${bgObservation} ${textObservation} p-8 rounded-tr-3xl rounded-bl-3xl shadow-xl max-w-xs`}
                   >
-                    <p className="font-mainFont text-2xl font-bold mb-2">
+                    <p className="font-secondFont text-2xl font-bold mb-2">
                       {content.texts.features.titleMessageFeature}
                     </p>
                     <p className="text-sm font-secondFont font-light">
@@ -172,7 +172,7 @@ function FeaturesNovaTemplate({ colorMode }) {
                         {feature.icon}
                       </div>
                       <h1
-                        className={`font-mainFont font-bold text-lg mb-2 ${text} ${hoverTextCard} transition-all`}
+                        className={`font-secondFont font-bold text-lg mb-2 ${text} ${hoverTextCard} transition-all`}
                       >
                         {feature.title}
                       </h1>

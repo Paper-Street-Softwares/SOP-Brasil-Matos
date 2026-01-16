@@ -42,7 +42,7 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
       image = ' border-[8px] border-white'
       break
     case 'dark':
-      backgroundMode = 'bg-black'
+      backgroundMode = 'bg-darkOpacity'
       text = 'text-corTitulosBranca'
       textOpacity = 'text-corOutrosTextosBranca'
       textDestaque = 'text-primaryLight'
@@ -65,28 +65,31 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
   }
 
   return (
-    <SectionArea id="about" className={`${backgroundMode}`}>
+    <SectionArea
+      data-theme={colorMode}
+      id="about"
+      className={`${backgroundMode}`}
+    >
       <SectionWrapper className="desktop1:max-w-[900px]">
         <div className="text-center">
           <span
-            className={`font-bold font-secondFont tracking-wider uppercase mb-4 text-xs block ${miniTagColor}`}
+            className={`${textDestaque} font-bold font-secondFont tracking-wider uppercase text-xs mb-2 block`}
           >
             {content.texts.team.miniTag}
           </span>
-          <h1 className={`text-4xl font-mainFont font-light mb-6 ${text}`}>
-            {' '}
+          <h1
+            className={` text-3xl md:text-4xl font-mainFont font-medium mb-4 ${text} `}
+          >
             {content.texts.team.title}
           </h1>
-          <p
-            className={`text-[16px] font-secondFont font-light max-w-2xl mx-auto  ${textOpacity}`}
-          >
-            {' '}
+
+          <p className={`font-secondFont font-light ${textOpacity}`}>
             {content.texts.team.subtitle}
           </p>
         </div>
         <section className="w-full relative overflow-visible">
           <div className="mx-aut flex flex-col relative z-10">
-            <div className="flex flex-col-reverse desktop1:flex-row-reverse gap-4 desktop1:gap-16 items-center">
+            <div className="flex flex-col-reverse desktop1:flex-row-reverse desktop1:gap-16 items-center">
               {/* Conteúdo textual */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
@@ -95,14 +98,19 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
                 className="space-y-8"
               >
                 <div className="max-w-[450px]">
+                  <span
+                    className={`font-secondFont text-paragraph2 uppercase font-bold font-secondFont text-paragraph2 uppercase font-bold ${textDestaque}`}
+                  >
+                    {content.texts.team.cards.card1.title}
+                  </span>
                   <h1
-                    className={`text-3xl md:text-4xl font-mainFont font-medium mb-4 flex flex-col gap-0 ${text}`}
+                    className={`text-3xl md:text-4xl font-mainFont font-medium flex flex-col gap-0 ${text}`}
                   >
                     {content.texts.team.cards.card1.name}
-                    <span>{content.texts.team.cards.card1.title}</span>
                   </h1>
+
                   <p
-                    className={`font-secondFont font-light text-sm leading-relaxed ${textOpacity}`}
+                    className={`font-secondFont font-light text-sm leading-relaxed mt-4 ${textOpacity}`}
                   >
                     {content.texts.team.cards.card1.description}
                   </p>
@@ -132,7 +140,7 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
                 </div>
               </motion.div>
             </div>
-            <div className="flex flex-col-reverse desktop1:flex-row gap-4 desktop1:gap-16 items-center">
+            <div className="flex flex-col-reverse desktop1:flex-row desktop1:gap-16 items-center">
               {/* Conteúdo textual */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
@@ -141,14 +149,19 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
                 className="space-y-8"
               >
                 <div className="max-w-[450px]">
+                  <span
+                    className={`font-secondFont text-paragraph2 uppercase font-bold font-secondFont text-paragraph2 uppercase font-bold ${textDestaque}`}
+                  >
+                    {content.texts.team.cards.card1.title}
+                  </span>
                   <h1
-                    className={`text-3xl md:text-4xl font-mainFont font-medium mb-4 flex flex-col gap-0 ${text}`}
+                    className={`text-3xl md:text-4xl font-mainFont font-medium flex flex-col gap-0 ${text}`}
                   >
                     {content.texts.team.cards.card2.name}
-                    <span>{content.texts.team.cards.card1.title}</span>
                   </h1>
+
                   <p
-                    className={`font-secondFont font-light text-sm leading-relaxed ${textOpacity}`}
+                    className={`font-secondFont font-light text-sm leading-relaxed mt-4 ${textOpacity}`}
                   >
                     {content.texts.team.cards.card2.description}
                   </p>

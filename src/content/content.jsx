@@ -125,7 +125,6 @@ const content = {
               </svg>
             </span>
           </span>{' '}
-          só
         </h1>
       ),
       subtitle: (
@@ -378,8 +377,7 @@ const content = {
       miniTag: 'ADVOGADAS',
       title: (
         <h1>
-          Cuidado <span className="italic text-primaryDark">além</span> do
-          processo
+          Cuidado <span className="italic destaque">além</span> do processo
         </h1>
       ),
       subtitle:
@@ -389,11 +387,21 @@ const content = {
           img1: team1,
           alt: 'Imagens ilustrativa dos profissionais',
           name: <p>Dra Carla Brasil </p>,
-          title: <span className="text-paragraph4">Sócia Fundadora</span>,
+          title: <span>Sócia Fundadora</span>,
           description: (
-            <p>
-              Advogada com atuação nas áreas Cível (Direito de Família e
-              Sucessões e Direito Imobiliário) e Trabalhista.
+            <p className="flex flex-col gap-3">
+              <span>
+                Atuo nas áreas Cível (Direito de Família e Sucessões e Direito
+                Imobiliário) e Trabalhista, assessorando clientes em questões
+                que envolvem patrimônio, relações familiares e vínculos de
+                trabalho.
+              </span>
+              <span>
+                {' '}
+                Minha atuação é pautada pela clareza, segurança jurídica e busca
+                por soluções eficientes, especialmente em situações que exigem
+                sensibilidade e decisões estratégicas.
+              </span>
             </p>
           ),
         },
@@ -401,11 +409,20 @@ const content = {
           img2: team2,
           alt: 'Imagens ilustrativa dos profissionais',
           name: 'Dra Sylvia Matos',
-          title: <span className="text-paragraph4">Sócia Fundadora</span>,
+          title: <span>Sócia Fundadora</span>,
           description: (
-            <p>
-              Advogada com atuação nas áreas Cível (Direito das Obrigações e
-              Direito do Consumidor) e Trabalhista.
+            <p className="flex flex-col gap-3">
+              <span>
+                Atuo nas áreas Cível (Direito das Obrigações e Direito do
+                Consumidor) e Trabalhista, com foco na orientação jurídica
+                preventiva e contenciosa em relações contratuais e de consumo.
+              </span>
+              <span>
+                {' '}
+                Trabalho de forma estratégica e objetiva, priorizando a proteção
+                dos direitos dos meus clientes e a condução segura de demandas
+                que exigem firmeza técnica e precisão jurídica.
+              </span>
             </p>
           ),
         },

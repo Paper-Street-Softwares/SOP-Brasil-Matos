@@ -14,12 +14,12 @@
 
 /* default (light) */
 .hero-underline {
-  color: rgb(79 70 229 / 0.3); /* equivalente a text-accent/30 */
+  @apply text-secondary; /* equivalente a text-accent/30 */
 }
 
 /* dark mode */
 [data-theme='dark'] .hero-underline {
-  color: rgba(164, 147, 147, 0.35);
+  @apply text-primaryDark;
 }
 body {
   background-color: #fff !important;

@@ -76,7 +76,7 @@ function FooterNovoTemplate({
                 >
                   {expediente && (
                     <>
-                      <h1 className={`font-bold font-mainFont ${text}`}>
+                      <h1 className={`font-bold font-secondFont ${text}`}>
                         Horário de expediente:
                       </h1>
                       {content.texts.infos.footerexpediente}
@@ -99,7 +99,7 @@ function FooterNovoTemplate({
               <div className="flex flex-col justify-center sm:items-center gap-8 tablet2:justify-center ">
                 <div className="w-fit ">
                   <h1
-                    className={`font-bold font-mainFont text-lg mb-6 ${text}`}
+                    className={`font-bold font-secondFont text-lg mb-6 ${text}`}
                   >
                     Links Rápidos
                   </h1>
@@ -130,7 +130,7 @@ function FooterNovoTemplate({
               <div className="justify-start tablet2:justify-start flex flex-col gap-6">
                 <div className="w-fit">
                   <h1
-                    className={`font-bold font-mainFont text-lg mb-6 ${text}`}
+                    className={`font-bold font-secondFont text-lg mb-6 ${text}`}
                   >
                     Contato
                   </h1>
@@ -224,7 +224,7 @@ function FooterNovoTemplate({
                 </a>
               </div>
               <p
-                className={`font-secondFont text-paragraph2 mt-4 ${textOpacity}`}
+                className={`font-secondFont text-paragraph2 desktop1:text-paragraph3 mt-4 ${textOpacity}`}
               >
                 Esse site não faz parte do Google LLC nem do Facebook Inc. e não
                 oferecemos nenhum tipo de serviço oficial do governo.

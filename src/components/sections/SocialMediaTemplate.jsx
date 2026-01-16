@@ -114,7 +114,9 @@ function SocialMediaTemplate({ colorMode }) {
                     </div>
 
                     <div>
-                      <h1 className={`font-bold font-mainFont text-lg ${text}`}>
+                      <h1
+                        className={`font-bold font-secondFont text-lg ${text}`}
+                      >
                         Instagram
                       </h1>
                       <p

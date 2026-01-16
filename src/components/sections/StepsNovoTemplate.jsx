@@ -110,7 +110,7 @@ function StepsNovoTemplate({ colorMode }) {
                   </h1>
                 </div>
 
-                <div className="space-y-8">
+                <div className="space-y-8 ">
                   {steps.map((item, idx) => (
                     <div key={idx} className="flex gap-6 relative">
                       {idx !== steps.length - 1 && (
@@ -125,12 +125,12 @@ function StepsNovoTemplate({ colorMode }) {
                       </div>
                       <div className="pt-2">
                         <h1
-                          className={`text-xl font-bold font-mainFont mb-2 ${text}`}
+                          className={`text-xl font-bold mb-2 font-secondFont ${text}`}
                         >
                           {item.cardTitle}
                         </h1>
                         <p
-                          className={`text-sm font-secondFont font-light ${textOpacity}`}
+                          className={`text-sm font-light font-secondFont ${textOpacity}`}
                         >
                           {item.cardDescription}
                         </p>

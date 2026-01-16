@@ -4,7 +4,7 @@ const ColorModeContext = createContext(null)
 
 export function ColorModeProvider({ children }) {
   const [colorMode, setColorMode] = useState('light') // default, light, dark
-  const [whatsAppColor] = useState(true) // ativa cor do WhatsApp
+  const [whatsAppColor] = useState(false) // ativa cor do WhatsApp
   const [showGlobalButton] = useState(false) // ativa as os botões e caixa de alerta
 
   return (
