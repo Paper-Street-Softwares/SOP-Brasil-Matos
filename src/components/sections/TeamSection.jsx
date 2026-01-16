@@ -99,7 +99,7 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
               >
                 <div className="max-w-[450px]">
                   <span
-                    className={`font-secondFont text-paragraph2 uppercase ${textDestaque}`}
+                    className={`font-secondFont text-paragraph2 uppercase font-bold ${textDestaque}`}
                   >
                     {content.texts.team.cards.card1.title}
                   </span>
@@ -150,7 +150,7 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
               >
                 <div className="max-w-[450px]">
                   <span
-                    className={`font-secondFont text-paragraph2 uppercase font-bold font-secondFont text-paragraph2 uppercase font-bold ${textDestaque}`}
+                    className={`font-secondFont text-paragraph2 uppercase font-bold ${textDestaque}`}
                   >
                     {content.texts.team.cards.card1.title}
                   </span>
