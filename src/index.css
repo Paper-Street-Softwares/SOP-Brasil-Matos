@@ -14,7 +14,7 @@
 
 /* default (light) */
 .hero-underline {
-  color: rgb(79 70 229 / 0.3); /* equivalente a text-accent/30 */
+  @apply text-secondary; /* equivalente a text-accent/30 */
 }
 
 /* dark mode */

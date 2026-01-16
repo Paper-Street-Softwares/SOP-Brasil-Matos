@@ -127,7 +127,7 @@ function AboutNovoTemplate({ ButtonModal, colorMode }) {
                         <CheckCircle2 className="w-5 h-5" />
                       </div>
                       <div>
-                        <h3 className={`font-bold font-mainFont ${text}`}>
+                        <h3 className={`font-bold font-secondFont ${text}`}>
                           {item.title}
                         </h3>
                         <p
@@ -199,7 +199,7 @@ function AboutNovoTemplate({ ButtonModal, colorMode }) {
             className="font-secondFont bg-white p-4 rounded-md"
             closeIcon={<X size={20} />}
             header={
-              <span className="font-mainFont px-4">
+              <span className="font-secondFont px-4">
                 {content.texts.about.titleModal}
               </span>
             }
@@ -212,7 +212,7 @@ function AboutNovoTemplate({ ButtonModal, colorMode }) {
               '641px': '85vw',
             }}
           >
-            <div className="text-paragraph3 p-4">
+            <div className="text-paragraph3 px-4 pb-4">
               <p className={`mt-[15px] mb-[20px] ${textOpacity}`}>
                 {content.texts.about.modal}
               </p>
