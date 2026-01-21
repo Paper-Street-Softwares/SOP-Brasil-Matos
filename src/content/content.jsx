@@ -2,7 +2,7 @@ import logo from '../assets/imgs/logo/logo.webp'
 import heroDefaultImg from '../assets/imgs/hero/lawHero.webp'
 import imgFeatures from '../assets/imgs/features/imgServices.webp'
 
-import aboutImg from '../assets/imgs/about/aboutImg.webp'
+import aboutImg from '../assets/imgs/hero/lawHero.webp'
 import team1 from '../assets/imgs/team/team1.webp'
 import team2 from '../assets/imgs/team/team2.webp'
 import aboutSocialImg from '../assets/imgs/about/aboutSocial.webp'
@@ -308,11 +308,11 @@ const content = {
         img: aboutImg,
         alt: 'Imagem ilustrativa da Seção Sobre',
       },
-      miniTag: 'QUEM É A BRASIL MATOS ADVOCACIA',
-      FirstPartTitle: 'Nossa',
+      miniTag: '',
+      FirstPartTitle: 'Para',
       DestaquePartTitle: (
         <p>
-          <span className="italic"> trajetória</span>{' '}
+          <span className="italic"> quem</span> é a Brasil Matos
         </p>
       ),
       SecondPartTitle: '',
@@ -374,7 +374,7 @@ const content = {
       },
     },
     team: {
-      miniTag: 'ADVOGADAS',
+      miniTag: 'Equipe',
       title: (
         <h1>
           Cuidado <span className="italic destaque">além</span> do processo
@@ -386,7 +386,7 @@ const content = {
         card1: {
           img1: team1,
           alt: 'Imagens ilustrativa dos profissionais',
-          name: <p>Dra Carla Brasil </p>,
+          name: <p>Dra. Carla Brasil - OAB/SP 532.958</p>,
           title: <span>Sócia Fundadora</span>,
           description: (
             <p className="flex flex-col gap-3">
@@ -402,13 +402,19 @@ const content = {
                 por soluções eficientes, especialmente em situações que exigem
                 sensibilidade e decisões estratégicas.
               </span>
+              <span>
+                {' '}
+                Para atendimento e orientações jurídicas, entre em contato pelo
+                e-mail: <br />
+                carlabrasil@brasilmatos.com.br
+              </span>
             </p>
           ),
         },
         card2: {
           img2: team2,
           alt: 'Imagens ilustrativa dos profissionais',
-          name: 'Dra Sylvia Matos',
+          name: 'Dra. Sylvia Matos – OAB/SP 501.551',
           title: <span>Sócia Fundadora</span>,
           description: (
             <p className="flex flex-col gap-3">
@@ -422,6 +428,11 @@ const content = {
                 Trabalho de forma estratégica e objetiva, priorizando a proteção
                 dos direitos dos meus clientes e a condução segura de demandas
                 que exigem firmeza técnica e precisão jurídica.
+              </span>
+              <span>
+                {' '}
+                Para atendimento e orientações jurídicas, entre em contato pelo
+                e-mail: <br /> sylviamatos@brasilmatos.com.br
               </span>
             </p>
           ),
