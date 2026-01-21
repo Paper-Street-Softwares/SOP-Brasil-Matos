@@ -7,29 +7,29 @@ import StepsNovoTemplate from '../components/sections/StepsNovoTemplate'
 import FaqNovoTemplate from '../components/sections/FaqNovoTemplate'
 
 // Lazy — abaixo da dobra
-const FeaturesNovaTemplate = lazy(() =>
-  import('../components/sections/FeaturesNovaTemplate')
+const FeaturesNovaTemplate = lazy(
+  () => import('../components/sections/FeaturesNovaTemplate'),
 )
 // const FeaturesSemImage = lazy(() =>
 //   import('../components/sections/FeaturesSemImage')
 // )
-const CtaNovoTemplate = lazy(() =>
-  import('../components/sections/CtaNovoTemplate')
+const CtaNovoTemplate = lazy(
+  () => import('../components/sections/CtaNovoTemplate'),
 )
-const AboutNovoTemplate = lazy(() =>
-  import('../components/sections/AboutNovoTemplate')
+const AboutNovoTemplate = lazy(
+  () => import('../components/sections/AboutNovoTemplate'),
 )
 
 const TeamSectionNew = lazy(() => import('../components/sections/TeamSection'))
 
-const SocialMediaTemplate = lazy(() =>
-  import('../components/sections/SocialMediaTemplate')
+const SocialMediaTemplate = lazy(
+  () => import('../components/sections/SocialMediaTemplate'),
 )
-const FooterNovoTemplate = lazy(() =>
-  import('../components/sections/FooterNovoTemplate')
+const FooterNovoTemplate = lazy(
+  () => import('../components/sections/FooterNovoTemplate'),
 )
-const WhatsappAnimated = lazy(() =>
-  import('../components/interactives/WhatsAppAnimated')
+const WhatsappAnimated = lazy(
+  () => import('../components/interactives/WhatsAppAnimated'),
 )
 import { useContext } from 'react'
 import { ColorModeProvider } from '../context/UseContextArchive'
@@ -61,7 +61,7 @@ export default function Index() {
               colorMode={colorMode}
               mapa={false}
               phoneSecond={false}
-              expediente={true}
+              expediente={false}
               adress={true}
               email={true}
               emailSecond={false}

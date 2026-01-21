@@ -80,7 +80,7 @@ function AboutNovoTemplate({ ButtonModal, colorMode }) {
                     {content.texts.about.miniTag}
                   </span>
                   <h2
-                    className={`text-3xl md:text-4xl font-mainFont font-medium mb-4 flex flex-wrap gap-2 ${text}`}
+                    className={`text-3xl md:text-4xl font-mainFont font-medium mb-4 flex flex-wrap gap-2 text-justify ${text}`}
                   >
                     {content.texts.about.FirstPartTitle}
                     <span className={`${textDestaque}`}>
@@ -89,12 +89,12 @@ function AboutNovoTemplate({ ButtonModal, colorMode }) {
                     {content.texts.about.SecondPartTitle}
                   </h2>
                   <p
-                    className={`font-secondFont font-light text-sm tablet1:text-lg leading-relaxed ${textOpacity}`}
+                    className={`font-secondFont font-light text-sm tablet1:text-lg leading-relaxed text-justify ${textOpacity}`}
                   >
                     {content.texts.about.subtitle}
                   </p>
                   <p
-                    className={`font-secondFont font-light text-sm tablet1:text-lg leading-relaxed mt-6 ${textOpacity}`}
+                    className={`font-secondFont font-light text-sm tablet1:text-lg leading-relaxed mt-6 text-justify ${textOpacity}`}
                   >
                     {content.texts.about.paragraph}
                   </p>
@@ -111,7 +111,7 @@ function AboutNovoTemplate({ ButtonModal, colorMode }) {
                 </div>
 
                 {/* Lista de benefícios */}
-                <div className="space-y-4">
+                <div className="space-y-4 text-justify">
                   {[
                     {
                       title: 'Defesa Estratégica',
@@ -127,11 +127,11 @@ function AboutNovoTemplate({ ButtonModal, colorMode }) {
                         <CheckCircle2 className="w-5 h-5" />
                       </div>
                       <div>
-                        <h3 className={`font-bold font-secondFont ${text}`}>
+                        <h3 className={`font-bold font-secondFont ${text} text-justify`}>
                           {item.title}
                         </h3>
                         <p
-                          className={`text-sm font-secondFont font-light ${textOpacity}`}
+                          className={`text-sm font-secondFont font-light ${textOpacity} text-justify`}
                         >
                           {item.desc}
                         </p>
@@ -199,7 +199,7 @@ function AboutNovoTemplate({ ButtonModal, colorMode }) {
             className="font-secondFont bg-white p-4 rounded-md"
             closeIcon={<X size={20} />}
             header={
-              <span className="font-secondFont px-4">
+              <span className="font-secondFont px-4 text-justify">
                 {content.texts.about.titleModal}
               </span>
             }
@@ -213,7 +213,7 @@ function AboutNovoTemplate({ ButtonModal, colorMode }) {
             }}
           >
             <div className="text-paragraph3 px-4 pb-4">
-              <p className={`mt-[15px] mb-[20px] ${textOpacity}`}>
+              <p className={`mt-[15px] mb-[20px] text-justify ${textOpacity}`}>
                 {content.texts.about.modal}
               </p>
               <ButtonReflexo

@@ -85,7 +85,7 @@ function HeroTemplateNovo({
           className={`absolute bottom-0 left-0 w-[40%] h-1/2 rounded-full blur-3xl -translate-x-1/4 translate-y-1/4 z-0 ${backgroundMode}`}
         />
         <SectionWrapper>
-          <div className="container relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="container relative z-10 grid justify-center items-center">
             {/* Content */}
 
             <motion.div
@@ -97,20 +97,20 @@ function HeroTemplateNovo({
               <div
                 className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border shadow-sm text-xs font-secondFont font-bold tracking-wide uppercase ${bgMinitag}`}
               >
-                <span>
+                {/* <span>
                   <MapPin className="w-4 h-4" />
-                </span>
+                </span> */}
                 {content.texts.hero.miniTag}
               </div>
 
               <h1
-                className={` desktop1:text-start w-full text-4xl md:text-5xl lg:text-7xl font-medium leading-[1.1] ${text} `}
+                className={` desktop1:text-justify w-full text-4xl md:text-5xl lg:text-7xl font-medium leading-[1.1] ${text} `}
               >
                 {content.texts.hero.title}
               </h1>
 
               <p
-                className={`text-start desktop1:text-start text-lg md:text-xl leading-relaxed max-w-lg font-secondFont font-extralight ${textOpacity}`}
+                className={` text-lg md:text-xl leading-relaxed max-w-lg font-secondFont font-extralight text-justify ${textOpacity}`}
               >
                 {content.texts.hero.subtitle}
               </p>
@@ -160,7 +160,7 @@ function HeroTemplateNovo({
             </motion.div>
 
             {/* Image */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
@@ -180,7 +180,7 @@ function HeroTemplateNovo({
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
-                {/* Floating Card */}
+
                 {showGlobalButton && (
                   <motion.div
                     id="ligar"
@@ -216,7 +216,7 @@ function HeroTemplateNovo({
                   </motion.div>
                 )}
               </div>
-            </motion.div>
+            </motion.div> */}
           </div>
         </SectionWrapper>
       </section>

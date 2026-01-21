@@ -68,7 +68,9 @@ function SocialMediaTemplate({ colorMode }) {
                 {content.texts.about.aboutSocial.title}
               </h2>
 
-              <p className={`font-secondFont font-light ${textOpacity}`}>
+              <p
+                className={`font-secondFont font-light text-justify ${textOpacity}`}
+              >
                 {content.texts.about.aboutSocial.subtitle}
               </p>
             </div>

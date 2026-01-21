@@ -49,12 +49,12 @@ function CtaNovoTemplate({ colorMode }) {
               {content.texts.ctaSecondary.miniTag}
             </span>
             <h2
-              className={`text-4xl md:text-[48px] leading-[48px] font-mainFont font-light mb-6 ${text}`}
+              className={`text-4xl md:text-[48px] leading-[40px] font-mainFont font-light mb-6 ${text}`}
             >
               {content.texts.ctaSecondary.title}
             </h2>
             <p
-              className={`text-lg font-secondFont font-light md:text-xl max-w-2xl mx-auto mb-10 ${textOpacity}`}
+              className={`text-lg font-secondFont font-light md:text-xl max-w-2xl mx-auto mb-6 text-justify ${textOpacity}`}
             >
               {content.texts.ctaSecondary.subtitle}
             </p>

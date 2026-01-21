@@ -57,7 +57,7 @@ function FaqNovoTemplate({ colorMode }) {
                 {content.texts.faq.title}
               </h2>
               <p
-                className={`text-sm font-secondFont font-light opacity-90 ${textOpacity}`}
+                className={`text-sm font-secondFont font-light opacity-90 text-justify ${textOpacity}`}
               >
                 {content.texts.faq.subtitle}
               </p>
@@ -78,12 +78,12 @@ function FaqNovoTemplate({ colorMode }) {
                 >
                   <AccordionTrigger
                     colorMode={colorMode}
-                    className={`text-lg font-medium font-secondFont text-left py-6 ${text}`}
+                    className={`text-lg font-medium font-secondFont py-6 text-justify ${text}`}
                   >
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent
-                    className={`font-secondFont font-light pb-6 leading-relaxed ${textOpacity}`}
+                    className={`font-secondFont font-light pb-6 leading-relaxed text-justify ${textOpacity}`}
                   >
                     {faq.answer}
                   </AccordionContent>
