@@ -160,7 +160,7 @@ function FooterNovoTemplate({
                     {email && (
                       <li className="flex items-center gap-3">
                         <Mail className={`w-5 h-5 shrink-0 ${iconColor}`} />
-                        <span className="font-secondFont font-light text-paragraph2 tablet2:text-paragraph3 desktop1:text-paragraph3">
+                        <span className="font-secondFont font-light text-paragraph4">
                           {content.texts.infos.email}
                         </span>
                       </li>
