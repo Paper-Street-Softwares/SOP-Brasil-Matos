@@ -74,11 +74,11 @@ function AboutNovoTemplate({ ButtonModal, colorMode }) {
                 className="space-y-8"
               >
                 <div>
-                  <span
+                  {/* <span
                     className={`font-bold font-secondFont tracking-wider uppercase text-xs mb-2 block ${textDestaque}`}
                   >
                     {content.texts.about.miniTag}
-                  </span>
+                  </span> */}
                   <h2
                     className={`text-3xl md:text-4xl font-mainFont font-medium mb-4 flex flex-wrap gap-2 text-justify ${text}`}
                   >
@@ -127,7 +127,9 @@ function AboutNovoTemplate({ ButtonModal, colorMode }) {
                         <CheckCircle2 className="w-5 h-5" />
                       </div>
                       <div>
-                        <h3 className={`font-bold font-secondFont ${text} text-justify`}>
+                        <h3
+                          className={`font-bold font-secondFont ${text} text-justify`}
+                        >
                           {item.title}
                         </h3>
                         <p
