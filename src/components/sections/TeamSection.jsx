@@ -90,7 +90,7 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
           </p>
         </div>
         <section className="w-full relative overflow-visible">
-          <div className="mx-aut flex flex-col relative z-10">
+          <div className="mx-auto gap-6 flex flex-col relative z-10">
             <div className="flex flex-col-reverse desktop1:flex-row-reverse desktop1:gap-16 items-center">
               {/* Conteúdo textual */}
               <motion.div
@@ -124,7 +124,7 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-                className="relative w-full desktop1:max-w-[400px] mt-10 tablet1:mt-24 desktop1:mt-10 m-auto overflow-visible mb-10"
+                className="relative w-full desktop1:max-w-[400px] mt-10 tablet1:mt-24 desktop1:mt-10 m-auto overflow-visible mb-6"
               >
                 <div className="relative rounded-3xl shadow-2xl ring-1 max-w-[386px] mx-auto ring-black/5">
                   {/* CLIP DA IMAGEM */}
@@ -175,7 +175,7 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-                className="relative w-full desktop1:max-w-[400px] mt-10 tablet1:mt-24 desktop1:mt-10 m-auto overflow-visible mb-10"
+                className="relative w-full desktop1:max-w-[400px] mt-10 tablet1:mt-24 desktop1:mt-10 m-auto overflow-visible mb-6"
               >
                 <div className="relative rounded-3xl shadow-2xl ring-1 max-w-[386px] mx-auto ring-black/5">
                   {/* CLIP DA IMAGEM */}

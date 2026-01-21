@@ -386,7 +386,11 @@ const content = {
         card1: {
           img1: team1,
           alt: 'Imagens ilustrativa dos profissionais',
-          name: <p>Dra. Carla Brasil - OAB/SP 532.958</p>,
+          name: (
+            <p>
+              Dra. Carla Brasil <br /> OAB/SP 532.958
+            </p>
+          ),
           title: <span>Sócia Fundadora</span>,
           description: (
             <p className="flex flex-col gap-3">
@@ -414,7 +418,11 @@ const content = {
         card2: {
           img2: team2,
           alt: 'Imagens ilustrativa dos profissionais',
-          name: 'Dra. Sylvia Matos – OAB/SP 501.551',
+          name: (
+            <p>
+              Dra. Sylvia Matos <br /> OAB/SP 501.551
+            </p>
+          ),
           title: <span>Sócia Fundadora</span>,
           description: (
             <p className="flex flex-col gap-3">
