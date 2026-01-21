@@ -98,10 +98,10 @@ function FeaturesNovaTemplate({ colorMode }) {
                   <div
                     className={`absolute -bottom-6 -left-6 ${bgObservation} ${textObservation} p-8 rounded-tr-3xl rounded-bl-3xl shadow-xl max-w-xs`}
                   >
-                    <p className="font-secondFont text-2xl font-bold mb-2">
+                    <p className="font-secondFont text-2xl font-bold mb-2 text-justify">
                       {content.texts.features.titleMessageFeature}
                     </p>
-                    <p className="text-sm font-secondFont font-light">
+                    <p className="text-sm font-secondFont font-light text-justify">
                       {content.texts.features.subtitleMessageFeature}
                     </p>
                   </div>
@@ -155,7 +155,9 @@ function FeaturesNovaTemplate({ colorMode }) {
                     {content.texts.features.title}
                   </h1>
 
-                  <p className={`font-secondFont font-light ${textOpacity}`}>
+                  <p
+                    className={`font-secondFont font-light text-justify ${textOpacity}`}
+                  >
                     {content.texts.features.subtitle}
                   </p>
                 </div>
@@ -172,12 +174,12 @@ function FeaturesNovaTemplate({ colorMode }) {
                         {feature.icon}
                       </div>
                       <h1
-                        className={`font-secondFont font-bold text-lg mb-2 ${text} ${hoverTextCard} transition-all`}
+                        className={`font-secondFont font-bold text-lg mb-2 ${text} ${hoverTextCard} transition-all `}
                       >
                         {feature.title}
                       </h1>
                       <p
-                        className={`text-sm font-secondFont font-light ${textOpacity} ${hoverTextCard} transition-all`}
+                        className={`text-sm font-secondFont font-light ${textOpacity} ${hoverTextCard} transition-all text-justify`}
                       >
                         {feature.subtitle}
                       </p>

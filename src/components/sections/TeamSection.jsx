@@ -67,7 +67,7 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
   return (
     <SectionArea
       data-theme={colorMode}
-      id="about"
+      id="team"
       className={`${backgroundMode}`}
     >
       <SectionWrapper className="desktop1:max-w-[900px]">
@@ -83,7 +83,9 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
             {content.texts.team.title}
           </h1>
 
-          <p className={`font-secondFont font-light ${textOpacity}`}>
+          <p
+            className={`font-secondFont font-light text-justify ${textOpacity}`}
+          >
             {content.texts.team.subtitle}
           </p>
         </div>
@@ -110,7 +112,7 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
                   </h1>
 
                   <p
-                    className={`font-secondFont font-light text-sm leading-relaxed mt-4 ${textOpacity}`}
+                    className={`font-secondFont font-light text-sm leading-relaxed text-justify mt-4 ${textOpacity}`}
                   >
                     {content.texts.team.cards.card1.description}
                   </p>
@@ -150,18 +152,18 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
               >
                 <div className="max-w-[450px]">
                   <span
-                    className={`font-secondFont text-paragraph2 uppercase font-bold ${textDestaque}`}
+                    className={`font-secondFont text-paragraph2 uppercase font-bold text-justify ${textDestaque}`}
                   >
                     {content.texts.team.cards.card2.title}
                   </span>
                   <h1
-                    className={`text-3xl md:text-4xl font-mainFont font-medium flex flex-col gap-0 ${text}`}
+                    className={`text-3xl md:text-4xl font-mainFont font-medium flex flex-col text-justify gap-0 ${text}`}
                   >
                     {content.texts.team.cards.card2.name}
                   </h1>
 
                   <p
-                    className={`font-secondFont font-light text-sm leading-relaxed mt-4 ${textOpacity}`}
+                    className={`font-secondFont font-light text-sm leading-relaxed mt-4 text-justify ${textOpacity}`}
                   >
                     {content.texts.team.cards.card2.description}
                   </p>

@@ -91,14 +91,14 @@ const content = {
       },
       menuItems: [
         'Início',
-        'Serviços',
-        'Sobre',
+        'Áreas de Atuação',
+        'Equipe',
         'Perguntas',
         // 'Blog',
         // 'Perguntas',
         // 'Mapa',
       ],
-      menuId: ['home', 'feature', 'about', 'faq'],
+      menuId: ['home', 'feature', 'team', 'faq'],
       ariaLabel: 'Botão de Contato',
       ctaButtonText: 'Contato',
       ctaButtonTextResponsive: 'Contato',
@@ -112,7 +112,7 @@ const content = {
             decisão
             <span>
               <svg
-                className="hero-underline absolute -bottom-1 left-0 w-full h-3 text-accent/30"
+                className="hero-underline absolute bottom-0 left-0 w-full h-3 text-accent/30"
                 viewBox="0 0 100 10"
                 preserveAspectRatio="none"
               >

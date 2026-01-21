@@ -104,13 +104,13 @@ function HeroTemplateNovo({
               </div>
 
               <h1
-                className={` desktop1:text-start w-full text-4xl md:text-5xl lg:text-7xl font-medium leading-[1.1] ${text} `}
+                className={` desktop1:text-justify w-full text-4xl md:text-5xl lg:text-7xl font-medium leading-[1.1] ${text} `}
               >
                 {content.texts.hero.title}
               </h1>
 
               <p
-                className={`text-start desktop1:text-start text-lg md:text-xl leading-relaxed max-w-lg font-secondFont font-extralight ${textOpacity}`}
+                className={` text-lg md:text-xl leading-relaxed max-w-lg font-secondFont font-extralight text-justify ${textOpacity}`}
               >
                 {content.texts.hero.subtitle}
               </p>

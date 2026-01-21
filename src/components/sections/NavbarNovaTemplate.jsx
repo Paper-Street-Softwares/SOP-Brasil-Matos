@@ -87,7 +87,7 @@ function NavbarNovaTemplate({
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden desktop1:flex items-center gap-8 text-sm font-secondFont font-medium">
+          <div className="hidden desktop1:flex items-center gap-8 text-md font-secondFont font-medium">
             {labels.map((item, index) => (
               <Link
                 to={ids[index]}

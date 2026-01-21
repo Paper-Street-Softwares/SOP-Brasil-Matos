@@ -55,7 +55,7 @@ function FooterNovoTemplate({
         <footer className={`${textOpacity}`}>
           <div className="container mx-auto">
             <div
-              className={`grid sm:grid-cols-2 lg:grid-cols-3 ${grid} items-start gap-12 tablet2:gap-2 desktop1:gap-12 mb-8 w-full`}
+              className={`grid sm:grid-cols-2 lg:grid-cols-3 ${grid} items-start gap-12 tablet2:gap-2 desktop1:gap-12 mb-8 w-full text-justify`}
             >
               {/* Logo e infos */}
               <div className="space-y-6">
@@ -202,7 +202,7 @@ function FooterNovoTemplate({
 
             {/* Footer Bottom */}
             <div
-              className={` text-center font-secondFont text-sm ${textOpacity}`}
+              className={` text-justify font-secondFont text-sm ${textOpacity}`}
             >
               <p>&copy; {content.texts.footer.copyrightLine}</p>
               <br />

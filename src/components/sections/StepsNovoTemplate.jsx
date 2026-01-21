@@ -130,7 +130,7 @@ function StepsNovoTemplate({ colorMode }) {
                           {item.cardTitle}
                         </h1>
                         <p
-                          className={`text-sm font-light font-secondFont ${textOpacity}`}
+                          className={`text-sm font-light font-secondFont text-justify ${textOpacity}`}
                         >
                           {item.cardDescription}
                         </p>
