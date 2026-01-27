@@ -111,7 +111,7 @@ function AboutNovoTemplate({ ButtonModal, colorMode }) {
                 </div>
 
                 {/* Lista de benefícios */}
-                <div className="space-y-4 text-justify">
+                {/* <div className="space-y-4 text-justify">
                   {[
                     {
                       title: 'Defesa Estratégica',
@@ -140,9 +140,9 @@ function AboutNovoTemplate({ ButtonModal, colorMode }) {
                       </div>
                     </div>
                   ))}
-                </div>
+                </div> */}
 
-                <div className="flex flex-col gap-4 pt-4 w-fit justify-center items-start">
+                <div className="flex flex-col gap-4 pt-4 w-fit justify-center items-start mx-auto">
                   <ButtonReflexo
                     icon={
                       <svg
@@ -214,7 +214,7 @@ function AboutNovoTemplate({ ButtonModal, colorMode }) {
               '641px': '85vw',
             }}
           >
-            <div className="text-paragraph3 px-4 pb-4">
+            <div className="text-paragraph3 px-4 pb-4 flex flex-col">
               <p className={`mt-[15px] mb-[20px] text-justify ${textOpacity}`}>
                 {content.texts.about.modal}
               </p>
@@ -233,6 +233,7 @@ function AboutNovoTemplate({ ButtonModal, colorMode }) {
                 link={content.texts.links.ctaWhatsapp}
                 label={content.texts.navbar.ctaButtonText}
                 colorMode={colorMode}
+                className="w-fit mx-auto"
               />
             </div>
           </Dialog>

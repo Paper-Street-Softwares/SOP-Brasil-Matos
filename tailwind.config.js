@@ -14,6 +14,7 @@ export default {
     'border',
     'border-green-600/30',
     'bg-red-700',
+    'bg-wppDark',
   ],
   theme: {
     extend: {

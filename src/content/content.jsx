@@ -388,7 +388,8 @@ const content = {
           alt: 'Imagens ilustrativa dos profissionais',
           name: (
             <p>
-              Dra. Carla Brasil <br /> OAB/SP 532.958
+              Dra. Carla Brasil <br />{' '}
+              <span className="text-title3">OAB/SP 532.958</span>
             </p>
           ),
           title: <span>Sócia Fundadora</span>,
@@ -420,7 +421,8 @@ const content = {
           alt: 'Imagens ilustrativa dos profissionais',
           name: (
             <p>
-              Dra. Sylvia Matos <br /> OAB/SP 501.551
+              Dra. Sylvia Matos <br />{' '}
+              <span className="text-title3"> OAB/SP 501.551</span>
             </p>
           ),
           title: <span>Sócia Fundadora</span>,

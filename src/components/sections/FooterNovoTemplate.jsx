@@ -83,16 +83,6 @@ function FooterNovoTemplate({
                     </>
                   )}
                 </p>
-                <div className="flex gap-4">
-                  <FooterSocialIcons
-                    instagram
-                    facebook
-                    linkedin
-                    tiktok
-                    x
-                    youtube
-                  />
-                </div>
               </div>
 
               {/* Links rápidos */}
@@ -123,6 +113,16 @@ function FooterNovoTemplate({
                       </li>
                     ))}
                   </ul>
+                  <div className="flex gap-4 mt-6">
+                    <FooterSocialIcons
+                      instagram
+                      facebook
+                      linkedin
+                      tiktok
+                      x
+                      youtube
+                    />
+                  </div>
                 </div>
               </div>
 
