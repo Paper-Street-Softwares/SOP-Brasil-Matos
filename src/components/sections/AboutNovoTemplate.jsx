@@ -111,7 +111,7 @@ function AboutNovoTemplate({ ButtonModal, colorMode }) {
                 </div>
 
                 {/* Lista de benefícios */}
-                <div className="space-y-4 text-justify">
+                {/* <div className="space-y-4 text-justify">
                   {[
                     {
                       title: 'Defesa Estratégica',
@@ -140,7 +140,7 @@ function AboutNovoTemplate({ ButtonModal, colorMode }) {
                       </div>
                     </div>
                   ))}
-                </div>
+                </div> */}
 
                 <div className="flex flex-col gap-4 pt-4 w-fit justify-center items-start mx-auto">
                   <ButtonReflexo
