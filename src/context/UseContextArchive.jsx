@@ -4,7 +4,7 @@ const ColorModeContext = createContext(null)
 
 export function ColorModeProvider({ children }) {
   const [colorMode, setColorMode] = useState('light') // default, light, dark
-  const [whatsAppColor] = useState(false) // ativa cor do WhatsApp
+  const [whatsAppColor] = useState(true) // ativa cor do WhatsApp
   const [showGlobalButton] = useState(false) // ativa as os botões e caixa de alerta
 
   return (
@@ -22,7 +22,7 @@ export function ColorModeProvider({ children }) {
 }
 
 export const whatsAppThemes = {
-  light: 'bg-green-800 text-corTitulosBranca border border-green-600/30',
+  light: 'bg-wppDark text-corTitulosBranca border border-green-600/30',
   dark: 'bg-green-500 text-black',
   default: 'bg-green-500 text-black',
 }

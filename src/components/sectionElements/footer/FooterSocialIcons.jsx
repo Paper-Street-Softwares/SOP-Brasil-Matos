@@ -2,6 +2,7 @@ import React from 'react'
 import MotionDivDownToUp from '../../animation/MotionDivDownToUp'
 import IconButton from '../../interactives/IconButton'
 import { infos } from '../../../content/content'
+import logoInstagram from '../../../assets/imgs/logo/instagram.webp'
 
 const icons = {
   facebook: {
@@ -127,12 +128,12 @@ function FooterSocialIcons({ withAnimation = true }) {
           key === 'x'
             ? `https://twitter.com/${profile}`
             : key === 'linkedin'
-            ? `https://www.linkedin.com/in/${profile}`
-            : key === 'tiktok'
-            ? `https://www.tiktok.com/@${cleanedProfile}`
-            : key === 'youtube'
-            ? `https://youtube.com/${infos.youtubeProfile}`
-            : `https://www.${key}.com/${cleanedProfile}`
+              ? `https://www.linkedin.com/in/${profile}`
+              : key === 'tiktok'
+                ? `https://www.tiktok.com/@${cleanedProfile}`
+                : key === 'youtube'
+                  ? `https://youtube.com/${infos.youtubeProfile}`
+                  : `https://www.${key}.com/${cleanedProfile}`
 
         const { aria, svg } = icons[key]
 
@@ -143,7 +144,11 @@ function FooterSocialIcons({ withAnimation = true }) {
             rel="noopener noreferrer"
             aria-label={`Link para o ${aria}`}
           >
-            <IconButton ariaLabel={`Botão para o ${aria}`} icon={svg} />
+            {/* <IconButton ariaLabel={`Botão para o ${aria}`} icon={svg} /> */}
+            <IconButton
+              ariaLabel={`Botão para o ${aria}`}
+              icon={<img src={logoInstagram} alt="Logo do Instagram" />}
+            />
           </a>
         )
 
