@@ -202,7 +202,7 @@ function FooterNovoTemplate({
 
             {/* Footer Bottom */}
             <div
-              className={` text-justify font-secondFont text-sm ${textOpacity}`}
+              className={` text-center font-secondFont text-sm ${textOpacity}`}
             >
               <p>&copy; {content.texts.footer.copyrightLine}</p>
               <br />
