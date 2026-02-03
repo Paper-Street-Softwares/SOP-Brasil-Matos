@@ -116,6 +116,7 @@ function NavbarNovaTemplate({
                     <Dropdown
                       ref={dropdownRef}
                       value={selectedService}
+                      aria-label="Selecionar área de atuação"
                       onChange={handleDropdownChange}
                       options={areaAtuacaoLinks}
                       optionLabel="label"
@@ -183,6 +184,7 @@ function NavbarNovaTemplate({
                       return (
                         <Dropdown
                           value={selectedService}
+                          aria-label="Selecionar área de atuação"
                           onChange={handleDropdownChange}
                           options={areaAtuacaoLinks}
                           optionLabel="label"
