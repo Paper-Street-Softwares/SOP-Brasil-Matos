@@ -9,7 +9,7 @@ import SectionWrapper from '../../components/sectionElements/SectionWrapper'
 
 // PrimeReact
 import { Dropdown } from 'primereact/dropdown'
-import 'primereact/resources/themes/lara-light-indigo/theme.css' 
+import 'primereact/resources/themes/lara-light-indigo/theme.css'
 import 'primereact/resources/primereact.min.css'
 
 function NavbarNovaTemplate({
@@ -158,6 +158,7 @@ function NavbarNovaTemplate({
           <button
             className="desktop1:hidden p-2 z-50 text-foreground"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Botão para abrir e fechar a sidebar"
           >
             {isMobileMenuOpen ? (
               <X className={colorMenu} />
