@@ -195,8 +195,8 @@ function FooterNovoTemplate({
             </div>
 
             <hr
-              className={`pb-6 border-t ${text} ${
-                colorMode === 'light' ? 'opacity-90' : 'opacity-20'
+              className={`pb-6 border-t border-black ${
+                colorMode === 'light' ? 'opacity-10 ' : 'opacity-20'
               } w-full`}
             />
 

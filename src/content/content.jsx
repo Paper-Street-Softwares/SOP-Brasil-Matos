@@ -6,6 +6,7 @@ import aboutImg from '../assets/imgs/hero/lawHero.webp'
 import team1 from '../assets/imgs/team/team1.webp'
 import team2 from '../assets/imgs/team/team2.webp'
 import aboutSocialImg from '../assets/imgs/about/aboutSocial.webp'
+import ButtonReflexo from '../components/interactives/ButtonReflexo'
 
 import imgSteps from '../assets/imgs/steps/imgSteps.webp'
 
@@ -187,10 +188,11 @@ const content = {
             'Contratos, cobranças e soluções jurídicas para evitar prejuízos.',
           description: (
             <div>
-              A_Definir
-              <br />
-              <br />
-              A_Definir
+              Atuação focada em relações do dia a dia entre pessoas e empresas.
+              Envolve elaboração, análise e revisão de contratos, cobranças
+              judiciais e extrajudiciais, indenizações e resolução de conflitos
+              para evitar prejuízos financeiros e dores de cabeça futuras. É
+              onde se tenta resolver antes que vire um problema maior.
             </div>
           ),
           icon: <Scale />,
@@ -203,10 +205,17 @@ const content = {
             'Divórcio, pensão, inventário e planejamento para proteger sua família e patrimônio.',
           description: (
             <div>
-              A_Definir
+              Cuida de momentos sensíveis da vida, quando emoção e patrimônio
+              costumam andar juntos. Atua em divórcios, pensão alimentícia,
+              guarda, inventários e planejamento sucessório, sempre buscando
+              soluções que preservem direitos, reduzam conflitos e tragam
+              segurança para a família e para o patrimônio construído.
               <br />
               <br />
-              A_Definir
+              <ButtonReflexo
+                label="Saiba mais sobre divórcio"
+                link="https://lps-divorcio-brasil-matos.vercel.app/"
+              />
             </div>
           ),
           icon: <Users />,
@@ -219,10 +228,11 @@ const content = {
             'Defesa dos seus direitos em conflitos e abusos nas relações de consumo.',
           description: (
             <div>
-              A_Definir
-              <br />
-              <br />
-              A_Definir
+              Defesa contra abusos praticados por empresas, bancos, operadoras e
+              prestadores de serviço. Atua em cobranças indevidas, vícios de
+              produtos, serviços mal prestados e contratos abusivos, garantindo
+              que o consumidor não fique em desvantagem em relações claramente
+              desequilibradas.
             </div>
           ),
           icon: <FileText />,
@@ -235,10 +245,11 @@ const content = {
             'Regularização, compra e venda de imóveis com segurança jurídica.',
           description: (
             <div>
-              A_Definir
-              <br />
-              A_Definir
-              <br />
+              Voltado para a segurança jurídica em negociações de imóveis.
+              Envolve compra e venda, regularização, contratos, usucapião e
+              análise documental, evitando prejuízos, fraudes e problemas que só
+              aparecem depois que o contrato já foi assinado e o dinheiro já
+              saiu da conta.
             </div>
           ),
           icon: <Building />,
@@ -246,15 +257,16 @@ const content = {
           buttonLabel: 'Saiba Mais',
         },
         card5: {
-          title: <p>Direito do Trabalho</p>,
+          title: 'Direito do Trabalho',
           subtitle:
             'Atuação estratégica para empregados e empregadores em demandas trabalhistas.',
           description: (
             <div>
-              A_Definir
-              <br />
-              <br />
-              A_Definir
+              Atuação tanto para empregados quanto para empregadores. Abrange
+              rescisões, verbas trabalhistas, ações judiciais, acordos e
+              orientações preventivas, sempre com foco estratégico para reduzir
+              riscos, evitar passivos desnecessários e garantir o cumprimento da
+              legislação trabalhista.
             </div>
           ),
           icon: <Briefcase />,
@@ -267,10 +279,11 @@ const content = {
             'Orientação preventiva para decisões seguras e menos riscos jurídicos.',
           description: (
             <div>
-              A_Definir
-              <br />
-              <br />
-              A_Definir
+              Trabalho preventivo, que costuma ser ignorado até virar urgência.
+              Consiste em orientar pessoas e empresas antes da tomada de
+              decisões importantes, analisando riscos jurídicos, contratos e
+              procedimentos, para evitar processos, multas e prejuízos que
+              poderiam ser facilmente evitados.
             </div>
           ),
           icon: <Gavel />,
@@ -321,33 +334,43 @@ const content = {
       paragraph: (
         <div>
           O Brasil Matos Advocacia e Consultoria Jurídica nasceu da união de
-          duas colegas que sempre acreditaram em uma advocacia exercida com
-          técnica, responsabilidade e visão estratégica. Desde o início, o
-          propósito foi claro: oferecer soluções jurídicas sólidas e bem
-          fundamentadas.
+          duas colegas de trabalho que, desde o início, compartilharam a mesma
+          visão sobre o exercício da advocacia: atuar com técnica, estratégia e
+          responsabilidade.
         </div>
       ),
       buttonModalLabelAbout: 'Continuar lendo',
       modal: (
         <p className=" font-secondFont">
           O Brasil Matos Advocacia e Consultoria Jurídica nasceu da união de
-          duas colegas que sempre acreditaram em uma advocacia exercida com
-          técnica, responsabilidade e visão estratégica. Desde o início, o
-          propósito foi claro: oferecer soluções jurídicas sólidas e bem
-          fundamentadas.
+          duas colegas de trabalho que, desde o início, compartilharam a mesma
+          visão sobre o exercício da advocacia: atuar com técnica, estratégia e
+          responsabilidade.
           <br />
           <br />
-          Formado pelas sócias fundadoras Carla Brasil e Sylvia Matos, o
-          escritório reúne mais de sete anos de atuação jurídica, com
-          experiência em diferentes áreas do Direito. Cada demanda é analisada
-          de forma cuidadosa, considerando riscos, possibilidades e o melhor
-          caminho a seguir.
+          Formado pelas advogadas e sócias fundadoras Carla Brasil e Sylvia
+          Matos, o escritório reúne{' '}
+          <span className="font-bold">mais de 8 anos de atuação jurídica</span>,
+          com experiência sólida em diferentes áreas do Direito.
           <br />
           <br />
-          Com atuação em São Paulo e experiência em tribunais de todo o Brasil,
-          o Brasil Matos preza pela ética, transparência e excelência técnica.
-          Nosso compromisso é atuar com proximidade, clareza e eficiência,
-          sempre focados na solução mais segura e adequada para cada cliente.
+          Nossa atuação é pautada por uma abordagem estratégica e personalizada.
+          Buscamos compreender profundamente o contexto por trás de cada
+          demanda, avaliando riscos, possibilidades e caminhos, para construir a
+          melhor estratégia jurídica — sempre com foco em soluções eficazes,
+          seguras e práticas.
+          <br />
+          <br />
+          Nosso compromisso é entender com precisão as necessidades do cliente e
+          atuar de forma diligente para alcançar a solução mais adequada, com
+          rapidez, segurança e eficiência, priorizando sempre uma condução clara
+          e transparente.
+          <br />
+          <br />
+          Com atuação em São Paulo e experiência perante diversos tribunais em
+          <span className="font-bold">todo o Brasil</span>, o Brasil Matos preza
+          pela ética, transparência e excelência técnica, oferecendo um
+          atendimento próximo, humano e comprometido com cada cliente.
         </p>
       ),
       paragraphModalCta: 'Entre em contato',

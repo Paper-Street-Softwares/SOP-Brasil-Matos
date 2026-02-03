@@ -1,15 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import content from '../../content/content'
 import SectionArea from '../sectionElements/SectionArea'
 import SectionWrapper from '../sectionElements/SectionWrapper'
 import ButtonReflexo from '../interactives/ButtonReflexo'
-import { Phone } from 'lucide-react'
+import { Phone, X, ArrowRight } from 'lucide-react'
+import { Dialog } from 'primereact/dialog'
 
 const features = Object.values(content.texts.features.cards)
 
 function FeaturesNovaTemplate({ colorMode }) {
-  // Definindo classes dinamicamente conforme o colorMode
+  const [visible, setVisible] = useState(false)
+  const [selectedFeature, setSelectedFeature] = useState({
+    title: '',
+    description: '',
+  })
+
+  const openModal = (feature) => {
+    setSelectedFeature({
+      title: feature.title,
+      description: feature.description || feature.subtitle,
+    })
+    setVisible(true)
+  }
+
   let backgroundMode,
     text,
     textOpacity,
@@ -48,7 +62,6 @@ function FeaturesNovaTemplate({ colorMode }) {
       hoverTextCard = ' group-hover:text-black'
       bgObservation = 'bg-primaryLight'
       textObservation = 'text-black'
-
       break
     default:
       backgroundMode = 'bg-secondary/60'
@@ -74,9 +87,7 @@ function FeaturesNovaTemplate({ colorMode }) {
         <section className="relative font-mainFont">
           <div className="container mx-auto">
             <div className="flex flex-col-reverse desktop1:flex-row gap-16 items-center">
-              {/* Imagem com destaque */}
               <div>
-                {' '}
                 <motion.div
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -84,7 +95,7 @@ function FeaturesNovaTemplate({ colorMode }) {
                   className="relative order-2 lg:order-1 w-full m-auto"
                 >
                   <div
-                    className={`relative overflow-hidden rounded-3xl shadow-2xl  ${image}`}
+                    className={`relative overflow-hidden rounded-3xl shadow-2xl ${image}`}
                   >
                     <img
                       src={content.texts.features.imgFeatures}
@@ -136,7 +147,6 @@ function FeaturesNovaTemplate({ colorMode }) {
                 </div>
               </div>
 
-              {/* Conteúdo das features */}
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -154,7 +164,6 @@ function FeaturesNovaTemplate({ colorMode }) {
                   >
                     {content.texts.features.title}
                   </h1>
-
                   <p
                     className={`font-secondFont font-light text-justify ${textOpacity}`}
                   >
@@ -166,23 +175,31 @@ function FeaturesNovaTemplate({ colorMode }) {
                   {features.map((feature, idx) => (
                     <motion.div
                       key={idx}
-                      className={`group p-6 rounded-xl ${cardBg} ${hoverCardBg} transition-all duration-700`}
+                      className={`group p-6 rounded-xl ${cardBg} ${hoverCardBg} transition-all duration-700 flex flex-col justify-between`}
                     >
-                      <div
-                        className={`w-10 h-10 rounded-full ${iconBg} mb-4 flex items-center justify-center shadow-sm transition-transform`}
-                      >
-                        {feature.icon}
+                      <div>
+                        <div
+                          className={`w-10 h-10 rounded-full ${iconBg} mb-4 flex items-center justify-center shadow-sm transition-transform`}
+                        >
+                          {feature.icon}
+                        </div>
+                        <h1
+                          className={`font-secondFont font-bold text-lg mb-2 ${text} ${hoverTextCard} transition-all `}
+                        >
+                          {feature.title}
+                        </h1>
+                        <p
+                          className={`text-sm font-secondFont font-light ${textOpacity} ${hoverTextCard} transition-all text-justify line-clamp-3`}
+                        >
+                          {feature.subtitle}
+                        </p>
                       </div>
-                      <h1
-                        className={`font-secondFont font-bold text-lg mb-2 ${text} ${hoverTextCard} transition-all `}
+                      <button
+                        onClick={() => openModal(feature)}
+                        className={`mt-4 flex items-center gap-2 text-xs font-bold uppercase tracking-wider font-secondFont ${textDestaque} ${hoverTextCard} hover:underline transition-all w-fit outline-none`}
                       >
-                        {feature.title}
-                      </h1>
-                      <p
-                        className={`text-sm font-secondFont font-light ${textOpacity} ${hoverTextCard} transition-all text-justify`}
-                      >
-                        {feature.subtitle}
-                      </p>
+                        Saiba mais <ArrowRight size={16} />
+                      </button>
                     </motion.div>
                   ))}
                 </div>
@@ -190,6 +207,32 @@ function FeaturesNovaTemplate({ colorMode }) {
             </div>
           </div>
         </section>
+
+        <Dialog
+          className="font-secondFont bg-white p-4 rounded-md"
+          closeIcon={<X size={20} />}
+          header={
+            <span className="font-secondFont text-start font-bold text-xl">
+              {selectedFeature.title}
+            </span>
+          }
+          visible={visible}
+          onHide={() => setVisible(false)}
+          style={{ width: '50vw' }}
+          breakpoints={{
+            '4000px': '641px',
+            '1024px': '641px',
+            '641px': '85vw',
+          }}
+        >
+          <div className="text-paragraph3 pb-2 flex flex-col">
+            <p
+              className={`mt-[15px] text-justify ${textOpacity} leading-relaxed`}
+            >
+              {selectedFeature.description}
+            </p>
+          </div>
+        </Dialog>
       </SectionWrapper>
     </SectionArea>
   )

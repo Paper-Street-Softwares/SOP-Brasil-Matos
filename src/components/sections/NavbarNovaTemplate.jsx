@@ -1,14 +1,16 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
-import { MessageCircle, Menu, X } from 'lucide-react'
-import { Button } from '../interactives/ButtonNovoTemplate'
+import React, { useEffect, useState, useRef } from 'react'
+import { Menu, X } from 'lucide-react'
 import { motion } from 'framer-motion'
-import SectionAria from '../../components/sectionElements/SectionArea'
-import SectionWrapper from '../../components/sectionElements/SectionWrapper'
 import content from '../../content/content'
-import { Link } from 'react-scroll'
+// Importamos scroller para scroll manual
+import { Link, scroller } from 'react-scroll'
 import ButtonReflexo from '../interactives/ButtonReflexo'
-import { useContext } from 'react'
+import SectionWrapper from '../../components/sectionElements/SectionWrapper'
+
+// PrimeReact
+import { Dropdown } from 'primereact/dropdown'
+import 'primereact/resources/themes/lara-light-indigo/theme.css' 
+import 'primereact/resources/primereact.min.css'
 
 function NavbarNovaTemplate({
   colorMode,
@@ -20,12 +22,12 @@ function NavbarNovaTemplate({
 }) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [active, setActive] = useState(null)
+
+  const [selectedService, setSelectedService] = useState(null)
+  const dropdownRef = useRef(null)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
+    const handleScroll = () => setIsScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -33,6 +35,29 @@ function NavbarNovaTemplate({
   const labels = content.texts.navbar.menuItems
   const ids = content.texts.navbar.menuId
 
+  const areaAtuacaoLinks = [
+    { label: 'Direito Penal', id: 'direito-penal' },
+    { label: 'Direito Civil', id: 'direito-civil' },
+    { label: 'Direito Trabalhista', id: 'direito-trabalhista' },
+  ]
+
+  // Função para scroll manual ao selecionar no Dropdown
+  const handleDropdownChange = (e) => {
+    const targetId = 'feature'
+    setSelectedService()
+
+    if (targetId) {
+      scroller.scrollTo(targetId, {
+        duration: 500,
+        smooth: true,
+        offset: -90,
+      })
+
+      setIsMobileMenuOpen(false)
+    }
+  }
+
+  // Lógica de cores
   switch (colorMode) {
     case 'light':
       backgrondMode = 'bg-white'
@@ -40,7 +65,6 @@ function NavbarNovaTemplate({
       hoverLinks = ' bg-gradient-to-r from-primaryDark to-primaryDark '
       colorMenu = 'text-primaryDark'
       bgOpacitySidebar = 'bg-white/70'
-
       break
     case 'dark':
       backgrondMode = 'bg-black'
@@ -48,9 +72,8 @@ function NavbarNovaTemplate({
       hoverLinks = ' bg-gradient-to-r from-primaryLight to-primaryLight '
       colorMenu = 'text-primaryLight'
       bgOpacitySidebar = 'bg-black/70'
-
       break
-    case 'default':
+    default:
       backgrondMode = 'bg-white'
       textOpacity = 'text-corOutrosTextosBranca'
       hoverLinks = ' bg-gradient-to-r from-primaryDark to-primaryDark '
@@ -63,83 +86,83 @@ function NavbarNovaTemplate({
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent ${
           isScrolled
-            ? `${backgrondMode} backdrop-blur-md py-2 shadow-sm border-shadowHero/10 h-auto`
-            : 'bg-transparent border-border/40 py-3 phone2:h-auto'
+            ? `${backgrondMode} backdrop-blur-md py-2 shadow-sm h-auto`
+            : 'bg-transparent py-3'
         }`}
       >
         <div className="container mx-auto flex items-center m-auto max-w-[1215px] h-full w-[90%] justify-between py-2">
+          {/* Logo */}
           <div
-            className={`flex flex-col z-20 relative  ${
-              isScrolled
-                ? 'w-[30%] tablet1:w-[20%] tablet2:w-[25%] desktop1:w-[15%] desktop3:w-[15%] transition-all duration-700'
-                : 'w-[50%] phone2:w-[40%] phone3:w-[35%] tablet1:w-[40%] tablet2:w-[30%] desktop1:w-[20%] desktop3:w-[20%] transition-all duration-700'
-            }`}
+            className={`flex flex-col z-20 relative ${isScrolled ? 'w-[15%]' : 'w-[20%]'}`}
           >
-            {' '}
             <img
               src={content.texts.navbar.logo.img}
               alt={content.texts.navbar.logo.alt}
               className="w-[100%]"
-              width={160}
-              height={102}
-              fetchPriority="high"
             />
           </div>
 
           {/* Desktop Nav */}
           <div className="hidden desktop1:flex items-center gap-8 text-md font-secondFont font-medium">
-            {labels.map((item, index) => (
-              <Link
-                to={ids[index]}
-                aria-label={`Link para ${item}`}
-                smooth={true}
-                duration={500}
-                offset={-90}
-                spy={true}
-                hashSpy={true}
-                tag="a"
-                href={`#${ids[index]}`}
-                className={`cursor-pointer ${hoverLinks} text-paragraph5 bg-[length:0%_2px] bg-no-repeat bg-left-bottom transition-[background-size] duration-300 hover:bg-[length:100%_2px] ${textOpacity} font-secondFont`}
-              >
-                {item}
-              </Link>
-            ))}
+            {labels.map((item, index) => {
+              if (item === 'Áreas de Atuação') {
+                return (
+                  <div
+                    key={item}
+                    className="relative py-2"
+                    onMouseEnter={() => dropdownRef.current.show()}
+                    onMouseLeave={() => dropdownRef.current.hide()}
+                  >
+                    <Dropdown
+                      ref={dropdownRef}
+                      value={selectedService}
+                      onChange={handleDropdownChange}
+                      options={areaAtuacaoLinks}
+                      optionLabel="label"
+                      optionValue="id"
+                      placeholder={item}
+                      className="w-full md:w-14rem bg-transparent border-none shadow-none"
+                      style={{ color: 'inherit' }}
+                      pt={{
+                        root: { className: 'bg-transparent border-none' },
+                        input: { className: `${textOpacity} p-0 font-medium` },
+                        trigger: { className: 'hidden' },
+                      }}
+                    />
+                  </div>
+                )
+              }
+
+              return (
+                <Link
+                  key={item}
+                  to={ids[index]}
+                  smooth={true}
+                  duration={500}
+                  offset={-90}
+                  className={`cursor-pointer ${hoverLinks} bg-[length:0%_2px] bg-no-repeat bg-left-bottom transition-[background-size] duration-300 hover:bg-[length:100%_2px] ${textOpacity}`}
+                >
+                  {item}
+                </Link>
+              )
+            })}
+
             <ButtonReflexo
               label="Contato"
               link={content.texts.links.ctaWhatsapp}
-              icon={
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={18}
-                  height={18}
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.197.297-.768.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.007-.372-.009-.571-.009-.198 0-.52.074-.793.372-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.226 1.36.194 1.872.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.288.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.896a9.825 9.825 0 012.893 6.994c-.002 5.45-4.436 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.158 11.892c0 2.096.547 4.142 1.588 5.94L0 24l6.305-1.654a11.882 11.882 0 005.732 1.463h.005c6.554 0 11.89-5.335 11.892-11.892a11.821 11.821 0 00-3.466-8.413" />
-                </svg>
-              }
               colorMode={colorMode}
-              className="text-sm mb-0"
             />
           </div>
 
           {/* Mobile Toggle */}
           <button
-            className="desktop1:hidden p-2 z-50 relative text-foreground "
+            className="desktop1:hidden p-2 z-50 text-foreground"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X
-                aria-label="Botão de fechar a Sidebar"
-                className={`${colorMenu}`}
-              />
+              <X className={colorMenu} />
             ) : (
-              <Menu
-                aria-label="botão Meu da Sidebar"
-                width={30}
-                height={30}
-                className={`${colorMenu}`}
-              />
+              <Menu width={30} height={30} className={colorMenu} />
             )}
           </button>
 
@@ -149,48 +172,50 @@ function NavbarNovaTemplate({
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="fixed inset-0 pt-24 px-6 desktop1:hidden z-40 w-full"
+                className="relative z-50"
               >
                 <div
-                  className={`flex flex-col gap-6 max-w-[500px] text-center items-center p-4 text-lg mx-auto font-secondFont font-medium border-l border-r border-b border-primary/20 rounded-md ${backgrondMode}`}
+                  className={`flex flex-col gap-6 max-w-[500px] text-center items-center p-8 text-lg mx-auto font-secondFont font-medium border border-primary/20 rounded-md ${backgrondMode}`}
                 >
-                  {labels.map((item, index) => (
-                    <Link
-                      to={ids[index]}
-                      aria-label={`Link para ${item}`}
-                      smooth={true}
-                      duration={500}
-                      offset={-90}
-                      spy={true}
-                      hashSpy={true}
-                      tag="a"
-                      href={`#${ids[index]}`}
-                      className={`cursor-pointer transition-all w-full ${textOpacity}`}
-                    >
-                      {item}
-                    </Link>
-                  ))}
-                  <ButtonReflexo
-                    icon={
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={18}
-                        height={18}
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.197.297-.768.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.611-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.007-.372-.009-.571-.009-.198 0-.52.074-.793.372-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.226 1.36.194 1.872.118.571-.085 1.758-.718 2.006-1.412.248-.694.248-1.288.173-1.412-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.896a9.825 9.825 0 012.893 6.994c-.002 5.45-4.436 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.158 11.892c0 2.096.547 4.142 1.588 5.94L0 24l6.305-1.654a11.882 11.882 0 005.732 1.463h.005c6.554 0 11.89-5.335 11.892-11.892a11.821 11.821 0 00-3.466-8.413" />
-                      </svg>
+                  {labels.map((item, index) => {
+                    if (item === 'Áreas de Atuação') {
+                      return (
+                        <Dropdown
+                          value={selectedService}
+                          onChange={handleDropdownChange}
+                          options={areaAtuacaoLinks}
+                          optionLabel="label"
+                          optionValue="id"
+                          placeholder={item}
+                          className="w-full md:w-14rem bg-transparent border-none shadow-none"
+                          style={{ color: 'inherit' }}
+                          pt={{
+                            root: { className: 'bg-transparent border-none' },
+                            input: {
+                              className: `${textOpacity} p-0 font-medium`,
+                            },
+                            trigger: { className: 'hidden' },
+                          }}
+                        />
+                      )
                     }
-                    link={content.texts.links.ctaWhatsapp}
-                    label={content.texts.navbar.ctaButtonText}
-                    colorMode={colorMode}
-                    className="w-fit"
-                  />
+                    return (
+                      <Link
+                        key={item}
+                        to={ids[index]}
+                        smooth={true}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`${textOpacity}`}
+                      >
+                        {item}
+                      </Link>
+                    )
+                  })}
                 </div>
               </motion.div>
               <div
-                className={`absolute z-0 inset-0 ${bgOpacitySidebar} h-screen`}
+                className={`absolute inset-0 ${bgOpacitySidebar} h-screen w-screen top-0 left-0`}
+                onClick={() => setIsMobileMenuOpen(false)}
               ></div>
             </div>
           )}
