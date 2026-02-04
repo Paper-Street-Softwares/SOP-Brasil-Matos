@@ -118,6 +118,7 @@ function NavbarNovaTemplate({
                     </label>
 
                     <Dropdown
+                      inputId="areas-atuacao"
                       ref={dropdownRef}
                       value={selectedService}
                       aria-label="Selecionar área de atuação"
@@ -127,10 +128,10 @@ function NavbarNovaTemplate({
                       optionValue="id"
                       placeholder={item}
                       className="w-full md:w-14rem bg-transparent border-none shadow-none"
-                      style={{ color: 'inherit' }}
+                      // style={{ color: 'inherit' }}
                       pt={{
                         root: { className: 'bg-transparent border-none' },
-                        input: { className: `${textOpacity} p-0 font-medium` },
+                        input: { className: `${textOpacity} p-0 font-light` },
                         trigger: { className: 'hidden' },
                       }}
                     />
@@ -191,6 +192,7 @@ function NavbarNovaTemplate({
                             Selecionar área de atuação
                           </label>
                           <Dropdown
+                            inputId="areas-atuacao"
                             value={selectedService}
                             aria-label="Selecionar área de atuação"
                             onChange={handleDropdownChange}
