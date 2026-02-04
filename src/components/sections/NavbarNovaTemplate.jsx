@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, Target, X } from 'lucide-react'
 import { motion } from 'framer-motion'
 import content from '../../content/content'
 // Importamos scroller para scroll manual
@@ -36,13 +36,23 @@ function NavbarNovaTemplate({
   const ids = content.texts.navbar.menuId
 
   const areaAtuacaoLinks = [
-    { label: 'Direito Penal', id: 'direito-penal' },
+    { label: 'Direito Família', id: 'direito-familia' },
     { label: 'Direito Civil', id: 'direito-civil' },
+    { label: 'Direito Consumidor', id: 'direito-consumidor' },
+    { label: 'Direito Imobiliário', id: 'direito-imobiliario' },
     { label: 'Direito Trabalhista', id: 'direito-trabalhista' },
   ]
 
   // Função para scroll manual ao selecionar no Dropdown
   const handleDropdownChange = (e) => {
+    const selectedId = e.value
+
+    if (selectedId === 'direito-familia') {
+      window.open('https://lps-divorcio-brasil-matos.vercel.app/', '_blank')
+      setIsMobileMenuOpen(false)
+      return
+    }
+
     const targetId = 'feature'
     setSelectedService()
 
