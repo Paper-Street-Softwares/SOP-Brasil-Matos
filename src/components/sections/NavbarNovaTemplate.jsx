@@ -113,12 +113,12 @@ function NavbarNovaTemplate({
                     onMouseEnter={() => dropdownRef.current.show()}
                     onMouseLeave={() => dropdownRef.current.hide()}
                   >
-                    <label htmlFor="areas-atuacao" className="sr-only">
+                    <label htmlFor="areas-atuacao-desktop" className="sr-only">
                       Selecionar área de atuação
                     </label>
 
                     <Dropdown
-                      inputId="areas-atuacao"
+                      inputId="areas-atuacao-desktop"
                       ref={dropdownRef}
                       value={selectedService}
                       aria-label="Selecionar área de atuação"
@@ -188,11 +188,14 @@ function NavbarNovaTemplate({
                     if (item === 'Áreas de Atuação') {
                       return (
                         <>
-                          <label htmlFor="areas-atuacao" className="sr-only">
+                          <label
+                            htmlFor="areas-atuacao-mobile"
+                            className="sr-only"
+                          >
                             Selecionar área de atuação
                           </label>
                           <Dropdown
-                            inputId="areas-atuacao"
+                            inputId="areas-atuacao-mobile"
                             value={selectedService}
                             aria-label="Selecionar área de atuação"
                             onChange={handleDropdownChange}
