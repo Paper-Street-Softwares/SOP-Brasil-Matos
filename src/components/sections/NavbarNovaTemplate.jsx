@@ -113,6 +113,10 @@ function NavbarNovaTemplate({
                     onMouseEnter={() => dropdownRef.current.show()}
                     onMouseLeave={() => dropdownRef.current.hide()}
                   >
+                    <label htmlFor="areas-atuacao" className="sr-only">
+                      Selecionar área de atuação
+                    </label>
+
                     <Dropdown
                       ref={dropdownRef}
                       value={selectedService}
@@ -182,24 +186,29 @@ function NavbarNovaTemplate({
                   {labels.map((item, index) => {
                     if (item === 'Áreas de Atuação') {
                       return (
-                        <Dropdown
-                          value={selectedService}
-                          aria-label="Selecionar área de atuação"
-                          onChange={handleDropdownChange}
-                          options={areaAtuacaoLinks}
-                          optionLabel="label"
-                          optionValue="id"
-                          placeholder={item}
-                          className="w-full md:w-14rem bg-transparent border-none shadow-none"
-                          style={{ color: 'inherit' }}
-                          pt={{
-                            root: { className: 'bg-transparent border-none' },
-                            input: {
-                              className: `${textOpacity} p-0 font-medium`,
-                            },
-                            trigger: { className: 'hidden' },
-                          }}
-                        />
+                        <>
+                          <label htmlFor="areas-atuacao" className="sr-only">
+                            Selecionar área de atuação
+                          </label>
+                          <Dropdown
+                            value={selectedService}
+                            aria-label="Selecionar área de atuação"
+                            onChange={handleDropdownChange}
+                            options={areaAtuacaoLinks}
+                            optionLabel="label"
+                            optionValue="id"
+                            placeholder={item}
+                            className="w-full md:w-14rem bg-transparent border-none shadow-none"
+                            style={{ color: 'inherit' }}
+                            pt={{
+                              root: { className: 'bg-transparent border-none' },
+                              input: {
+                                className: `${textOpacity} p-0 font-medium`,
+                              },
+                              trigger: { className: 'hidden' },
+                            }}
+                          />
+                        </>
                       )
                     }
                     return (
