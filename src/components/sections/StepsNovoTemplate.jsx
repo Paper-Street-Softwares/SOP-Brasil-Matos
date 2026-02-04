@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import SectionArea from '../sectionElements/SectionArea'
 import SectionWrapper from '../sectionElements/SectionWrapper'
 import content from '../../content/content'
+import MotionDivDownToUp from '../animation/MotionDivDownToUp'
 
 function StepsNovoTemplate({ colorMode }) {
   const steps = Object.values(content.texts.steps.cards)
@@ -59,7 +60,7 @@ function StepsNovoTemplate({ colorMode }) {
           <div className="container mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Imagem */}
-              <motion.div
+              <MotionDivDownToUp
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -84,10 +85,10 @@ function StepsNovoTemplate({ colorMode }) {
                     height={726}
                   />
                 </div>
-              </motion.div>
+              </MotionDivDownToUp>
 
               {/* Passos */}
-              <motion.div
+              <MotionDivDownToUp
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
@@ -112,33 +113,35 @@ function StepsNovoTemplate({ colorMode }) {
 
                 <div className="space-y-8 ">
                   {steps.map((item, idx) => (
-                    <div key={idx} className="flex gap-6 relative">
-                      {idx !== steps.length - 1 && (
+                    <MotionDivDownToUp>
+                      <div key={idx} className="flex gap-6 relative">
+                        {idx !== steps.length - 1 && (
+                          <div
+                            className={`absolute left-[1.65rem] top-12 bottom-0 w-0.5 ${lineColor}`}
+                          />
+                        )}
                         <div
-                          className={`absolute left-[1.65rem] top-12 bottom-0 w-0.5 ${lineColor}`}
-                        />
-                      )}
-                      <div
-                        className={`w-14 h-14 rounded-full ${stepNumberBg} border-2 border-primary ${stepNumberText} flex items-center justify-center text-xl font-bold font-mainFont shrink-0 shadow-sm z-10`}
-                      >
-                        {item.stepNumber}
-                      </div>
-                      <div className="pt-2">
-                        <h1
-                          className={`text-xl font-bold mb-2 font-secondFont ${text}`}
+                          className={`w-14 h-14 rounded-full ${stepNumberBg} border-2 border-primary ${stepNumberText} flex items-center justify-center text-xl font-bold font-mainFont shrink-0 shadow-sm z-10`}
                         >
-                          {item.cardTitle}
-                        </h1>
-                        <p
-                          className={`text-sm font-light font-secondFont text-justify ${textOpacity}`}
-                        >
-                          {item.cardDescription}
-                        </p>
+                          {item.stepNumber}
+                        </div>
+                        <div className="pt-2">
+                          <h1
+                            className={`text-xl font-bold mb-2 font-secondFont ${text}`}
+                          >
+                            {item.cardTitle}
+                          </h1>
+                          <p
+                            className={`text-sm font-light font-secondFont text-justify ${textOpacity}`}
+                          >
+                            {item.cardDescription}
+                          </p>
+                        </div>
                       </div>
-                    </div>
+                    </MotionDivDownToUp>
                   ))}
                 </div>
-              </motion.div>
+              </MotionDivDownToUp>
             </div>
           </div>
         </section>

@@ -6,6 +6,7 @@ import SectionWrapper from '../sectionElements/SectionWrapper'
 import ButtonReflexo from '../interactives/ButtonReflexo'
 import { Phone, X, ArrowRight } from 'lucide-react'
 import { Dialog } from 'primereact/dialog'
+import MotionDivDownToUp from '../animation/MotionDivDownToUp'
 
 const features = Object.values(content.texts.features.cards)
 
@@ -88,12 +89,7 @@ function FeaturesNovaTemplate({ colorMode }) {
           <div className="container mx-auto">
             <div className="flex flex-col-reverse desktop1:flex-row gap-16 items-center">
               <div>
-                <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, ease: 'easeOut' }}
-                  className="relative order-2 lg:order-1 w-full m-auto"
-                >
+                <MotionDivDownToUp className="relative order-2 lg:order-1 w-full m-auto">
                   <div
                     className={`relative overflow-hidden rounded-3xl shadow-2xl ${image}`}
                   >
@@ -116,7 +112,7 @@ function FeaturesNovaTemplate({ colorMode }) {
                       {content.texts.features.subtitleMessageFeature}
                     </p>
                   </div>
-                </motion.div>
+                </MotionDivDownToUp>
                 <div className="flex flex-col gap-4 pt-4 w-fit justify-center items-start mx-auto desktop1:m-auto">
                   <ButtonReflexo
                     icon={
@@ -147,7 +143,7 @@ function FeaturesNovaTemplate({ colorMode }) {
                 </div>
               </div>
 
-              <motion.div
+              <MotionDivDownToUp
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
@@ -173,37 +169,39 @@ function FeaturesNovaTemplate({ colorMode }) {
 
                 <div className="grid sm:grid-cols-2 gap-6">
                   {features.map((feature, idx) => (
-                    <motion.div
-                      key={idx}
-                      className={`group p-6 rounded-xl ${cardBg} ${hoverCardBg} transition-all duration-700 flex flex-col justify-between`}
-                    >
-                      <div>
-                        <div
-                          className={`w-10 h-10 rounded-full ${iconBg} mb-4 flex items-center justify-center shadow-sm transition-transform`}
-                        >
-                          {feature.icon}
-                        </div>
-                        <h1
-                          className={`font-secondFont font-bold text-lg mb-2 ${text} ${hoverTextCard} transition-all `}
-                        >
-                          {feature.title}
-                        </h1>
-                        <p
-                          className={`text-sm font-secondFont font-light ${textOpacity} ${hoverTextCard} transition-all text-justify line-clamp-3`}
-                        >
-                          {feature.subtitle}
-                        </p>
-                      </div>
-                      <button
-                        onClick={() => openModal(feature)}
-                        className={`mt-4 flex items-center gap-2 text-xs font-bold uppercase tracking-wider font-secondFont ${textDestaque} ${hoverTextCard} hover:underline transition-all w-fit outline-none`}
+                    <MotionDivDownToUp>
+                      <div
+                        key={idx}
+                        className={`group p-6 rounded-xl ${cardBg} ${hoverCardBg} transition-all duration-700 flex flex-col justify-between`}
                       >
-                        Saiba mais <ArrowRight size={16} />
-                      </button>
-                    </motion.div>
+                        <div>
+                          <div
+                            className={`w-10 h-10 rounded-full ${iconBg} mb-4 flex items-center justify-center shadow-sm transition-transform`}
+                          >
+                            {feature.icon}
+                          </div>
+                          <h1
+                            className={`font-secondFont font-bold text-lg mb-2 ${text} ${hoverTextCard} transition-all `}
+                          >
+                            {feature.title}
+                          </h1>
+                          <p
+                            className={`text-sm font-secondFont font-light ${textOpacity} ${hoverTextCard} transition-all text-justify line-clamp-3`}
+                          >
+                            {feature.subtitle}
+                          </p>
+                        </div>
+                        <button
+                          onClick={() => openModal(feature)}
+                          className={`mt-4 flex items-center gap-2 text-xs font-bold uppercase tracking-wider font-secondFont ${textDestaque} ${hoverTextCard} hover:underline transition-all w-fit outline-none`}
+                        >
+                          Saiba mais <ArrowRight size={16} />
+                        </button>
+                      </div>
+                    </MotionDivDownToUp>
                   ))}
                 </div>
-              </motion.div>
+              </MotionDivDownToUp>
             </div>
           </div>
         </section>

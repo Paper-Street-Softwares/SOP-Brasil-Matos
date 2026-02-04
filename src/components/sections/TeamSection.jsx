@@ -8,6 +8,7 @@ import content from '../../content/content'
 import ButtonReflexo from '../interactives/ButtonReflexo'
 import { Button } from '../interactives/ButtonNovoTemplate'
 import { Phone } from 'lucide-react'
+import MotionDivDownToUp from '../animation/MotionDivDownToUp'
 
 function TeamSectionNew({ ButtonModal, colorMode }) {
   const [visible, setVisible] = useState(false)
@@ -71,29 +72,31 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
       className={`${backgroundMode}`}
     >
       <SectionWrapper className="desktop1:max-w-[900px]">
-        <div className="text-center">
-          <span
-            className={`${textDestaque} font-bold font-secondFont tracking-wider uppercase text-xs mb-2 block`}
-          >
-            {content.texts.team.miniTag}
-          </span>
-          <h1
-            className={` text-3xl md:text-4xl font-mainFont font-medium mb-4 ${text} `}
-          >
-            {content.texts.team.title}
-          </h1>
+        <MotionDivDownToUp>
+          <div className="text-center">
+            <span
+              className={`${textDestaque} font-bold font-secondFont tracking-wider uppercase text-xs mb-2 block`}
+            >
+              {content.texts.team.miniTag}
+            </span>
+            <h1
+              className={` text-3xl md:text-4xl font-mainFont font-medium mb-4 ${text} `}
+            >
+              {content.texts.team.title}
+            </h1>
 
-          <p
-            className={`font-secondFont font-light text-justify ${textOpacity}`}
-          >
-            {content.texts.team.subtitle}
-          </p>
-        </div>
+            <p
+              className={`font-secondFont font-light text-justify ${textOpacity}`}
+            >
+              {content.texts.team.subtitle}
+            </p>
+          </div>
+        </MotionDivDownToUp>
         <section className="w-full relative overflow-visible">
           <div className="mx-auto gap-6 flex flex-col relative z-10">
             <div className="flex flex-col-reverse desktop1:flex-row-reverse desktop1:gap-16 items-center">
               {/* Conteúdo textual */}
-              <motion.div
+              <MotionDivDownToUp
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -117,10 +120,10 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
                     {content.texts.team.cards.card1.description}
                   </p>
                 </div>
-              </motion.div>
+              </MotionDivDownToUp>
 
               {/* Imagem com destaque */}
-              <motion.div
+              <MotionDivDownToUp
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
@@ -140,11 +143,11 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
                     />
                   </div>
                 </div>
-              </motion.div>
+              </MotionDivDownToUp>
             </div>
             <div className="flex flex-col-reverse desktop1:flex-row desktop1:gap-16 items-center">
               {/* Conteúdo textual */}
-              <motion.div
+              <MotionDivDownToUp
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -168,10 +171,10 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
                     {content.texts.team.cards.card2.description}
                   </p>
                 </div>
-              </motion.div>
+              </MotionDivDownToUp>
 
               {/* Imagem com destaque */}
-              <motion.div
+              <MotionDivDownToUp
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
@@ -191,7 +194,7 @@ function TeamSectionNew({ ButtonModal, colorMode }) {
                     />
                   </div>
                 </div>
-              </motion.div>
+              </MotionDivDownToUp>
             </div>
           </div>
 

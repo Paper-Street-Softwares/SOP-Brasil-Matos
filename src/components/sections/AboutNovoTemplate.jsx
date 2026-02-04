@@ -8,6 +8,7 @@ import content from '../../content/content'
 import ButtonReflexo from '../interactives/ButtonReflexo'
 import { Button } from '../interactives/ButtonNovoTemplate'
 import { Phone } from 'lucide-react'
+import MotionDivDownToUp from '../animation/MotionDivDownToUp'
 
 function AboutNovoTemplate({ ButtonModal, colorMode }) {
   const [visible, setVisible] = useState(false)
@@ -67,7 +68,7 @@ function AboutNovoTemplate({ ButtonModal, colorMode }) {
           <div className="container mx-auto relative z-10">
             <div className="grid lg:grid-cols-2 gap-4 desktop1:gap-16 items-center">
               {/* Conteúdo textual */}
-              <motion.div
+              <MotionDivDownToUp
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -169,10 +170,10 @@ function AboutNovoTemplate({ ButtonModal, colorMode }) {
                     className="text-white"
                   />
                 </div>
-              </motion.div>
+              </MotionDivDownToUp>
 
               {/* Imagem com destaque */}
-              <motion.div
+              <MotionDivDownToUp
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
@@ -192,7 +193,7 @@ function AboutNovoTemplate({ ButtonModal, colorMode }) {
                     />
                   </div>
                 </div>
-              </motion.div>
+              </MotionDivDownToUp>
             </div>
           </div>
 

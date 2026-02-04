@@ -88,7 +88,7 @@ function HeroTemplateNovo({
           <div className="container relative z-10 grid justify-center items-center">
             {/* Content */}
 
-            <motion.div
+            <div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -157,7 +157,7 @@ function HeroTemplateNovo({
                   {content.texts.hero.obsHero.text}
                 </span>
               </div>
-            </motion.div>
+            </div>
 
             {/* Image */}
             {/* <motion.div
