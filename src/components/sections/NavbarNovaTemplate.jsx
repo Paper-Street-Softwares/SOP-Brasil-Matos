@@ -226,7 +226,7 @@ function NavbarNovaTemplate({
                             pt={{
                               root: { className: 'bg-transparent border-none' },
                               input: {
-                                className: `${textOpacity} p-0 font-secondFont`,
+                                className: `${textOpacity} p-0 font-secondFont text-paragraph5`,
                               },
 
                               trigger: { className: 'hidden' },
