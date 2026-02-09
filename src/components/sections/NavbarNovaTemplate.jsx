@@ -202,7 +202,7 @@ function NavbarNovaTemplate({
                   {labels.map((item, index) => {
                     if (item === 'Áreas de Atuação') {
                       return (
-                        <>
+                        <React.Fragment key={item}>
                           <label
                             htmlFor="areas-atuacao-mobile"
                             className="sr-only"
@@ -210,18 +210,17 @@ function NavbarNovaTemplate({
                           >
                             Selecionar área de atuação
                           </label>
+
                           <Dropdown
                             inputId="areas-atuacao-mobile"
                             aria-labelledby="areas-atuacao-label-mobile"
                             value={selectedService}
-                            aria-label="Selecionar área de atuação"
                             onChange={handleDropdownChange}
                             options={areaAtuacaoLinks}
                             optionLabel="label"
                             optionValue="id"
                             placeholder={item}
                             className="w-full md:w-14rem bg-transparent border-none shadow-none"
-                            style={{ color: 'inherit' }}
                             pt={{
                               root: { className: 'bg-transparent border-none' },
                               input: {
@@ -230,9 +229,10 @@ function NavbarNovaTemplate({
                               trigger: { className: 'hidden' },
                             }}
                           />
-                        </>
+                        </React.Fragment>
                       )
                     }
+
                     return (
                       <Link
                         key={item}
