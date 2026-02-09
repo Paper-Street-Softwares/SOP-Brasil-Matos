@@ -337,42 +337,21 @@ const content = {
           duas colegas de trabalho que, desde o início, compartilharam a mesma
           visão sobre o exercício da advocacia: atuar com técnica, estratégia e
           responsabilidade.
-        </div>
-      ),
-      buttonModalLabelAbout: 'Continuar lendo',
-      modal: (
-        <p className=" font-secondFont">
-          O Brasil Matos Advocacia e Consultoria Jurídica nasceu da união de
-          duas colegas de trabalho que, desde o início, compartilharam a mesma
-          visão sobre o exercício da advocacia: atuar com técnica, estratégia e
-          responsabilidade.
           <br />
           <br />
-          Formado pelas advogadas e sócias fundadoras Carla Brasil e Sylvia
-          Matos, o escritório reúne{' '}
-          <span className="font-bold">mais de 8 anos de atuação jurídica</span>,
-          com experiência sólida em diferentes áreas do Direito.
-          <br />
-          <br />
-          Nossa atuação é pautada por uma abordagem estratégica e personalizada.
-          Buscamos compreender profundamente o contexto por trás de cada
-          demanda, avaliando riscos, possibilidades e caminhos, para construir a
-          melhor estratégia jurídica — sempre com foco em soluções eficazes,
-          seguras e práticas.
-          <br />
-          <br />
-          Nosso compromisso é entender com precisão as necessidades do cliente e
-          atuar de forma diligente para alcançar a solução mais adequada, com
-          rapidez, segurança e eficiência, priorizando sempre uma condução clara
-          e transparente.
+          Formado pelas Advogadas e sócias fundadoras Carla Brasil e Sylvia
+          Matos, o escritório reúne mais de 8 anos de atuação jurídica, com
+          experiência sólida em diferentes áreas do Direito.
           <br />
           <br />
           Com atuação em São Paulo e experiência perante diversos tribunais em
-          <span className="font-bold">todo o Brasil</span>, o Brasil Matos preza
-          pela ética, transparência e excelência técnica, oferecendo um
-          atendimento próximo, humano e comprometido com cada cliente.
-        </p>
+          todo o Brasil, o Brasil Matos preza pela ética, transparência e
+          excelência técnica, oferecendo um atendimento próximo, humano e
+          comprometido com cada cliente.
+        </div>
       ),
+      buttonModalLabelAbout: 'Continuar lendo',
+      modal: <p className=" font-secondFont">A_Definir</p>,
       paragraphModalCta: 'Entre em contato',
       titleModal: 'Nossa trajetória',
       ctaButtonAriaLabel: 'Botão para entrar em contato',
