@@ -103,7 +103,7 @@ function NavbarNovaTemplate({
         <div className="container mx-auto flex items-center m-auto max-w-[1215px] h-full w-[90%] justify-between py-2">
           {/* Logo */}
           <div
-            className={`flex flex-col z-20 relative ${isScrolled ? 'w-[15%]' : 'w-[20%]'}`}
+            className={`flex flex-col z-20 relative ${isScrolled ? 'w-[25%] tablet1:w-[15%] desktop3:w-[10%] duration-500 transition-all' : 'w-[30%] tablet1:w-[20%] desktop3:w-[15%] duration-500 transition-all'}`}
           >
             <img
               src={content.texts.navbar.logo.img}
