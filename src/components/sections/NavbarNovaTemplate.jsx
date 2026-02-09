@@ -146,7 +146,9 @@ function NavbarNovaTemplate({
                       // style={{ color: 'inherit' }}
                       pt={{
                         root: { className: 'bg-transparent border-none' },
-                        input: { className: `${textOpacity} p-0 font-light` },
+                        input: {
+                          className: `${textOpacity} p-0 font-secondFont`,
+                        },
                         trigger: { className: 'hidden' },
                       }}
                     />
@@ -224,8 +226,9 @@ function NavbarNovaTemplate({
                             pt={{
                               root: { className: 'bg-transparent border-none' },
                               input: {
-                                className: `${textOpacity} p-0 font-medium`,
+                                className: `${textOpacity} p-0 font-secondFont`,
                               },
+
                               trigger: { className: 'hidden' },
                             }}
                           />
