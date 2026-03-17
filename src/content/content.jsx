@@ -48,7 +48,11 @@ export const infos = {
   endereco: (
     <div>
       {/* <p>Endereço:</p> */}
-      <p>São Paulo e Grande São Paulo - SP</p>
+      <p>
+        Av. Paulista, nº 1471, Conj. 1110, <br />
+        São Paulo - SP, <br />
+        CEP: 01311-927
+      </p>
     </div>
   ),
   enderecoSecundario: (
@@ -68,7 +72,7 @@ export const infos = {
   obs: <span className="italic">A Definir</span>,
   instagramProfile: "brasilmatosadv", // Sem o @
   facebookProfile: "",
-  linkeDinProfile: "",
+  linkeDinProfile: "brasilmatos",
   x: "",
   tiktokProfile: "",
 

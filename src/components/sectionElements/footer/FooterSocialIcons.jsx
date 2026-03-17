@@ -1,12 +1,13 @@
-import React from 'react'
-import MotionDivDownToUp from '../../animation/MotionDivDownToUp'
-import IconButton from '../../interactives/IconButton'
-import { infos } from '../../../content/content'
-import logoInstagram from '../../../assets/imgs/logo/instagram.webp'
+import React from "react";
+import MotionDivDownToUp from "../../animation/MotionDivDownToUp";
+import IconButton from "../../interactives/IconButton";
+import { infos } from "../../../content/content";
+import logoInstagram from "../../../assets/imgs/logo/instagram.webp";
+import logoLinkedin from "../../../assets/imgs/logo/logoLinkedin.webp";
 
 const icons = {
   facebook: {
-    aria: 'Facebook',
+    aria: "Facebook",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -23,48 +24,10 @@ const icons = {
       </svg>
     ),
   },
-  instagram: {
-    aria: 'Instagram',
-    svg: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="transparent"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-      </svg>
-    ),
-  },
-  linkedin: {
-    aria: 'LinkedIn',
-    svg: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-        <rect width="4" height="12" x="2" y="9" />
-        <circle cx="4" cy="4" r="2" />
-      </svg>
-    ),
-  },
+  instagram: { aria: "Instagram" },
+  linkedin: { aria: "LinkedIn" },
   tiktok: {
-    aria: 'TikTok',
+    aria: "TikTok",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +41,7 @@ const icons = {
     ),
   },
   x: {
-    aria: 'X',
+    aria: "X",
     svg: (
       <svg viewBox="0 0 21.573 19.5" width="20" height="20" fill="currentColor">
         <path d="m 16.998462,0 h 3.308 l -7.227,8.26 8.502,11.24 h -6.657 l -5.2139994,-6.817 -5.966,6.817 H 0.43446256 L 8.1644626,10.665 0.00846256,0 H 6.8344626 l 4.7129994,6.231 z m -1.161,17.52 h 1.833 L 5.8384626,1.876 h -1.967 z" />
@@ -86,7 +49,7 @@ const icons = {
     ),
   },
   youtube: {
-    aria: 'YouTube',
+    aria: "YouTube",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -98,14 +61,18 @@ const icons = {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="lucide lucide-youtube-icon lucide-youtube"
       >
         <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
         <path d="m10 15 5-3-5-3z" />
       </svg>
     ),
   },
-}
+};
+
+const iconImages = {
+  instagram: logoInstagram,
+  linkedin: logoLinkedin,
+};
 
 function FooterSocialIcons({ withAnimation = true }) {
   const platforms = {
@@ -115,27 +82,33 @@ function FooterSocialIcons({ withAnimation = true }) {
     linkedin: infos.linkeDinProfile,
     x: infos.x,
     youtube: infos.youtubeProfile,
-  }
+  };
 
   return (
     <>
       {Object.entries(platforms).map(([key, profile]) => {
-        if (!profile || profile === 'A_Definir') return null
+        if (!profile || profile === "A_Definir") return null;
 
-        const cleanedProfile = profile.replace(/^@/, '')
+        const cleanedProfile = profile.replace(/^@/, "");
 
         const link =
-          key === 'x'
+          key === "x"
             ? `https://twitter.com/${profile}`
-            : key === 'linkedin'
-              ? `https://www.linkedin.com/in/${profile}`
-              : key === 'tiktok'
+            : key === "linkedin"
+              ? `https://www.linkedin.com/company/${profile}`
+              : key === "tiktok"
                 ? `https://www.tiktok.com/@${cleanedProfile}`
-                : key === 'youtube'
+                : key === "youtube"
                   ? `https://youtube.com/${infos.youtubeProfile}`
-                  : `https://www.${key}.com/${cleanedProfile}`
+                  : `https://www.${key}.com/${cleanedProfile}`;
 
-        const { aria, svg } = icons[key]
+        const { aria, svg } = icons[key];
+
+        const icon = iconImages[key] ? (
+          <img src={iconImages[key]} alt={`Logo do ${aria}`} />
+        ) : (
+          svg
+        );
 
         const button = (
           <a
@@ -144,22 +117,18 @@ function FooterSocialIcons({ withAnimation = true }) {
             rel="noopener noreferrer"
             aria-label={`Link para o ${aria}`}
           >
-            {/* <IconButton ariaLabel={`Botão para o ${aria}`} icon={svg} /> */}
-            <IconButton
-              ariaLabel={`Botão para o ${aria}`}
-              icon={<img src={logoInstagram} alt="Logo do Instagram" />}
-            />
+            <IconButton ariaLabel={`Botão para o ${aria}`} icon={icon} />
           </a>
-        )
+        );
 
         return withAnimation ? (
           <MotionDivDownToUp key={key}>{button}</MotionDivDownToUp>
         ) : (
           <React.Fragment key={key}>{button}</React.Fragment>
-        )
+        );
       })}
     </>
-  )
+  );
 }
 
-export default FooterSocialIcons
+export default FooterSocialIcons;
