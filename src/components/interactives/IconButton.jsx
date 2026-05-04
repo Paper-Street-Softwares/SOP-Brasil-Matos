@@ -1,12 +1,14 @@
 export default function IconButton(props) {
-  const { icon, label, ariaLabel, className } = props
+  const { icon, label, ariaLabel, className } = props;
 
   return (
     <button
-      className={`${className} w-10 h-10 rounded-full scale-100 hover:scale-95 transition-all duration-500 flex items-center justify-center`}
-      aria-label={ariaLabel || label}
+      className={`${className} w-10 h-10 rounded-full bg-primaryLight/10 hover:bg-primaryLight hover:text-white transition-all duration-500 flex items-center justify-center`}
+      aria-label={ariaLabel}
     >
-      {icon && <span className="flex items-center justify-center">{icon}</span>}
+      <div className="flex items-center text-center gap-[10px]">
+        <div className="flex flex-col justify-end text-colorBlack">{icon}</div>
+      </div>
     </button>
-  )
+  );
 }

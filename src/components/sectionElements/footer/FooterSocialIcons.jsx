@@ -24,8 +24,34 @@ const icons = {
       </svg>
     ),
   },
-  instagram: { aria: "Instagram" },
-  linkedin: { aria: "LinkedIn" },
+  instagram: {
+    aria: "Instagram",
+    svg: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d="M7.75 2C4.574 2 2 4.574 2 7.75v8.5C2 19.426 4.574 22 7.75 22h8.5C19.426 22 22 19.426 22 16.25v-8.5C22 4.574 19.426 2 16.25 2h-8.5zm0 2h8.5C18.216 4 20 5.784 20 7.75v8.5c0 1.966-1.784 3.75-3.75 3.75h-8.5C5.784 20 4 18.216 4 16.25v-8.5C4 5.784 5.784 4 7.75 4zm8.75 1.5a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z" />
+      </svg>
+    ),
+  },
+  linkedin: {
+    aria: "LinkedIn",
+    svg: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.851-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.352V9h3.414v1.561h.049c.476-.9 1.637-1.851 3.37-1.851 3.601 0 4.266 2.369 4.266 5.455v6.287zM5.337 7.433a2.063 2.063 0 110-4.126 2.063 2.063 0 010 4.126zM6.964 20.452H3.708V9h3.256v11.452z" />
+      </svg>
+    ),
+  },
   tiktok: {
     aria: "TikTok",
     svg: (
@@ -69,17 +95,14 @@ const icons = {
   },
 };
 
-const iconImages = {
-  instagram: logoInstagram,
-  linkedin: logoLinkedin,
-};
+const iconImages = {};
 
 function FooterSocialIcons({ withAnimation = true }) {
   const platforms = {
-    facebook: infos.facebookProfile,
-    tiktok: infos.tiktokProfile,
     instagram: infos.instagramProfile,
     linkedin: infos.linkeDinProfile,
+    facebook: infos.facebookProfile,
+    tiktok: infos.tiktokProfile,
     x: infos.x,
     youtube: infos.youtubeProfile,
   };
@@ -95,12 +118,12 @@ function FooterSocialIcons({ withAnimation = true }) {
           key === "x"
             ? `https://twitter.com/${profile}`
             : key === "linkedin"
-              ? `https://www.linkedin.com/company/${profile}`
-              : key === "tiktok"
-                ? `https://www.tiktok.com/@${cleanedProfile}`
-                : key === "youtube"
-                  ? `https://youtube.com/${infos.youtubeProfile}`
-                  : `https://www.${key}.com/${cleanedProfile}`;
+            ? `https://www.linkedin.com/company/${profile}`
+            : key === "tiktok"
+            ? `https://www.tiktok.com/@${cleanedProfile}`
+            : key === "youtube"
+            ? `https://youtube.com/${infos.youtubeProfile}`
+            : `https://www.${key}.com/${cleanedProfile}`;
 
         const { aria, svg } = icons[key];
 
