@@ -123,7 +123,7 @@ function FooterNovoTemplate({
                       </li>
                     ))}
                   </ul>
-                  <div className="flex gap-4 mt-6">
+                  <div className="flex gap-1 mt-6 ">
                     <FooterSocialIcons
                       instagram
                       facebook
