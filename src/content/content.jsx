@@ -198,6 +198,12 @@ const content = {
               judiciais e extrajudiciais, indenizações e resolução de conflitos
               para evitar prejuízos financeiros e dores de cabeça futuras. É
               onde se tenta resolver antes que vire um problema maior.
+              <br />
+              <br />
+              <ButtonReflexo
+                label="Saiba mais sobre Bloqueios"
+                link="https://bloqueios.brasilmatos.com.br/"
+              />
             </div>
           ),
           icon: <Scale />,
@@ -218,7 +224,7 @@ const content = {
               <br />
               <br />
               <ButtonReflexo
-                label="Saiba mais sobre divórcio"
+                label="Saiba mais sobre Divórcio"
                 link="https://divorcio.brasilmatos.com.br/"
               />
             </div>

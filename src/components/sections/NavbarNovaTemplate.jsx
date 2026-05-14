@@ -53,6 +53,18 @@ function NavbarNovaTemplate({
       return;
     }
 
+    if (selectedId === "direito-trabalhista") {
+      window.open("https://trabalhista.brasilmatos.com.br/", "_blank");
+      setIsMobileMenuOpen(false);
+      return;
+    }
+
+    if (selectedId === "direito-civil") {
+      window.open("https://bloqueios.brasilmatos.com.br/", "_blank");
+      setIsMobileMenuOpen(false);
+      return;
+    }
+
     const targetId = "feature";
     setSelectedService();
 
